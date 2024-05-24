@@ -2,8 +2,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="">
-      This is parentheses
+    <main className="text-9xl px-[3.5%] bg-white font-sfpd-regular">
     </main>
   );
 }
