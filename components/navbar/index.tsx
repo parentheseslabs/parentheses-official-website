@@ -1,9 +1,12 @@
 'use client'
 import ParenthesesLogo from '@/public/logo/ParenthesesLogo.svg'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import DropDownArrow from '@/public/svgs/dropdownArrow.svg'
 import Link from 'next/link'
 import SecondaryButton from '../buttons/SecondaryButton'
+import MobileNav from './MobileNav'
+import MobileLogo from '@/public/logo/moblieLogo.svg'
+import { AnimatePresence } from 'framer-motion'
 
 
 const navElementMembers = [
@@ -34,6 +37,10 @@ const navElementMembers = [
             {
                 subtitle: "Press",
                 href: "/press"
+            },
+            {
+                subtitle: 'Partners',
+                href: '/partners',
             },
         ]
     },
@@ -103,18 +110,19 @@ const navElementMembers = [
         href: '/insights',
         haveChildren: false,
     },
-    {
-        title: 'Partners',
-        href: '/partners',
-        haveChildren: false,
-    },
-
-
 ]
 
 const NavBar: React.FC = () => {
-
     const [isNavOpened, setIsnavOpened] = useState(1000);
+    const [isHamOpened, setisHamOpened] = useState(false);
+    useEffect(() => {
+        if (isHamOpened) {
+            document.body.style.overflow = 'hidden'
+        } else {
+            document.body.style.overflow = 'auto'
+        }
+    }, [isHamOpened])
+
     const handleClick = (idx: number) => {
         if (idx !== isNavOpened) {
             setIsnavOpened(idx)
@@ -128,12 +136,13 @@ const NavBar: React.FC = () => {
     }
 
     return (
-        <section className='fixed top-8 w-full justify-center px-[3.5%] hidden xl:flex'>
-            <div className='bg-white/60 backdrop-blur-lg h-fit w-full flex rounded-full border-2 border-primary_blue gap justify-between px-5 items-center'>
+        <section className='fixed pt-10 w-full justify-center px-[3.5%]'>
+            <div className='lg:bg-white/60 lg:backdrop-blur-lg h-fit w-full flex rounded-full lg:border-[1.5px] border-primary_blue gap justify-between px-5 items-center relative z-50'>
                 <Link href={'/'}>
-                    <ParenthesesLogo />
+                    <ParenthesesLogo className='hidden lg:flex relative z-50' />
+                    <MobileLogo className='flex lg:hidden drop-shadow-3xl ' />
                 </Link>
-                <div className='duration-500 flex gap-9'>
+                <div className='duration-500 gap-9 hidden lg:flex'>
                     {
                         navElementMembers.map((item, idx) => {
                             return (
@@ -162,7 +171,7 @@ const NavBar: React.FC = () => {
                                     }
                                     {
                                         item.haveChildren &&
-                                        <div className={`${isNavOpened === idx ? "flex" : "hidden"} absolute -bottom-8 -left-[90%]`}>
+                                        <div className={`${isNavOpened === idx ? "scale-y-100" : "scale-y-0"} absolute -bottom-8 -left-[90%] duration-300`}>
                                             <div className='relative -translate-x-[50%]'>
 
                                                 <div className='flex flex-col gap-2 absolute bg-white px-5 py-4 drop-shadow-lg rounded-md w-56'>
@@ -182,8 +191,32 @@ const NavBar: React.FC = () => {
                         })
                     }
                 </div>
-                <SecondaryButton title='LET&apos;S TALK' handleClick={buttonFunction} />
+                <div className='flex gap-4 items-center'>
+                    <SecondaryButton title='LET&apos;S TALK' handleClick={buttonFunction} />
+                    <div
+                        onClick={() => setisHamOpened(!isHamOpened)}
+                        className={` lg:hidden rounded-full relative size-11 flex flex-col gap-1 justify-center p-2 ${isHamOpened ? "items-center bg-white" : "bg-primary_blue"}`}>
+                        <div
+                            className={` pt-[0.2rem] ${isHamOpened ? "rotate-45 translate-y-[0.28rem] w-[80%] bg-primary_blue" : "w-full bg-white"
+                                } duration-300 relative z-20 rounded-full`}
+                        ></div>
+                        <div
+                            className={`w-[80%]  pt-[0.19rem] ${isHamOpened ? "-rotate-45 -translate-y-[0.18rem] bg-primary_blue" : "bg-white"
+                                } duration-300 relative z-20 rounded-full`}
+                        ></div>
+                        <div
+                            className={`w-[50%] bg-white pt-[0.2rem] ${isHamOpened && "hidden"
+                                } duration-700 relative z-20 rounded-full`}
+                        ></div>
+                    </div>
+                </div>
             </div>
+            <AnimatePresence>
+                {
+                    isHamOpened &&
+                    <MobileNav isOpened={isHamOpened} />
+                }
+            </AnimatePresence>
         </section>
     )
 }

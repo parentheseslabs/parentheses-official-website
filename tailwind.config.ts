@@ -22,6 +22,9 @@ const config: Config = {
         'sfpd-regular':['sfpd-regular','system-ui','sans-serif'],
         'sfpd-semibold':['sfpd-semibold','system-ui','sans-serif'],
         'sfpd-bold':['sfpd-bold','system-ui','sans-serif'],
+      },
+      dropShadow:{
+        '3xl': '0 10px 10px rgba(255, 255, 255, 0.30)',
       }
     },
   },
