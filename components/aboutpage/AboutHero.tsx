@@ -4,7 +4,7 @@ import SecondaryButton from '../buttons/SecondaryButton';
 
 const AboutHero = () => {
     return (
-        <div className='bg-primary_blue min-h-screen relative z-0 overflow-hidden  flex flex-col items-center pt-10 justify-center text-white text-center min-w-full'>
+        <div className='bg-primary_blue min-h-[100svh] relative z-0 overflow-hidden  flex flex-col items-center pt-10 justify-center text-white text-center min-w-full'>
             <div className='flex flex-col gap-8 lg:w-1/2 items-center justify-center'>
                 <div className='flex text-[4vmax] flex-col  justify-center items-center'>
                     <h1 className=" font-sfpd-bold text-white/70 ">Discover the story</h1>

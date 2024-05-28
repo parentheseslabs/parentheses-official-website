@@ -4,7 +4,7 @@ import Sale from "../../components/sale";
 
 const About = () => {
   return (
-    <div className='min-h-screen'>
+    <div className='min-h-[100svh]'>
       <Sale bg="white" className=""/>
       <AboutHero/>
     </div>
