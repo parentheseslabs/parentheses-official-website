@@ -10,7 +10,7 @@ const AboutHero = () => {
                     <h1 className=" font-sfpd-bold text-white/70 ">Discover the story</h1>
                     <h1 className=' font-sfpd-bold text-white/70 '>behind <span className='text-white'>Parentheses</span></h1>
                 </div>
-                <h2 className='lg:w-[55%] sm:w-full w-[93%]'>Elevate Your Business with tailored Apps, Personalized Dashboards, and  Intelligent AI Solutions</h2>
+                <h2 className='lg:w-[55%] sm:w-full w-[93%] text-sm lg:text-base'>Elevate Your Business with tailored Apps, Personalized Dashboards, and  Intelligent AI Solutions</h2>
                 <SecondaryButton title='Our Services'/>
             </div>
             <BgGrid className='rotate-180 absolute z-0 top-0 scale-[5] lg:scale-[2] translate-y-12 lg:-translate-y-10' />
