@@ -16,31 +16,31 @@ const navElementMembers = [
         children: [
             {
                 subtitle: "About Us",
-                href: "/aboutus",
+                href: "/about",
             },
             {
                 subtitle: "Team",
-                href: "/team"
+                href: "/about/team"
             },
             {
                 subtitle: "Partners",
-                href: "/partners"
+                href: "/about/partners"
             },
             {
                 subtitle: "Career",
-                href: "/careers"
+                href: "/about/careers"
             },
             {
                 subtitle: "Awards",
-                href: "/awards"
+                href: "/about/awards"
             },
             {
                 subtitle: "Press",
-                href: "/press"
+                href: "/about/in-the-press"
             },
             {
                 subtitle: 'Partners',
-                href: '/partners',
+                href: '/about/partners',
             },
         ]
     },
@@ -54,7 +54,7 @@ const navElementMembers = [
             },
             {
                 subtitle: "Market Research",
-                href: "/marketresearch"
+                href: "/market-research"
             },
             {
                 subtitle: "Brainstorming",
@@ -102,7 +102,7 @@ const navElementMembers = [
     },
     {
         title: 'Case Studies',
-        href: '/casestudis',
+        href: '/casestudies',
         haveChildren: false,
     },
     {
@@ -136,8 +136,8 @@ const NavBar: React.FC = () => {
     }
 
     return (
-        <section className='fixed pt-10 w-full justify-center px-[3.5%]'>
-            <div className='lg:bg-white/60 lg:backdrop-blur-lg h-fit w-full flex rounded-full lg:border-[1.5px] border-primary_blue gap justify-between px-5 items-center relative z-50'>
+        <section className='fixed pt-14 w-full justify-center px-[3.5%] z-10'>
+            <div className='lg:bg-white lg:backdrop-blur-lg h-fit w-full flex rounded-full lg:border-[1.5px] border-primary_blue gap justify-between px-5 items-center relative z-50'>
                 <Link href={'/'}>
                     <ParenthesesLogo className='hidden lg:flex relative z-50' />
                     <MobileLogo className='flex lg:hidden drop-shadow-3xl ' />

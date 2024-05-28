@@ -15,6 +15,10 @@
   font-family: sfpd-bold;
   src: url("../public/fonts/SF-Pro-Display-Bold.otf");
 }
+@font-face {
+  font-family: sfpd-light;
+  src: url("../public/fonts/SF-Pro-Display-Light.otf");
+}
 
 *{
   margin: 0;
