@@ -15,8 +15,8 @@ const AboutHero = () => {
                 </div>
                 <SecondaryButton title='Our Services' />
             </div>
-            <BgGrid className='rotate-180 absolute z-0 top-0 scale-[5] lg:scale-[2] translate-y-12 lg:-translate-y-10' />
-            <BgGrid className=' absolute z-0 bottom-0 scale-[5] lg:scale-[2] -translate-y-10 lg:translate-y-16 ' />
+            <BgGrid className='rotate-180 absolute z-0 top-0 scale-[5] lg:scale-[2] translate-y-12 md:translate-y-7 lg:-translate-y-10' />
+            <BgGrid className=' absolute z-0 bottom-0 scale-[5] lg:scale-[2] -translate-y-10 md:-translate-y-4 lg:translate-y-16 ' />
         </div>
     )
 }

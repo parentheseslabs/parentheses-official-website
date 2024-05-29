@@ -16,7 +16,8 @@ const config: Config = {
       colors:{
         'primary_blue':'#2876FF',
         'text_black':'#161616',
-        'bg_gray':'#DFDFDF'
+        'bg_gray':'#DFDFDF',
+        'highlight':"#D7E8FF",
       },
       fontFamily:{
         'sfpd-regular':['sfpd-regular','system-ui','sans-serif'],
