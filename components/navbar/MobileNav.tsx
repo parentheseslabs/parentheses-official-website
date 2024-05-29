@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import DropDownArrow from '@/public/svgs/dropdownArrow.svg'
 import Link from 'next/link'
-import {motion} from 'framer-motion';
+import { motion } from 'framer-motion';
 
 
 const hamElementMembers = [
@@ -12,31 +12,31 @@ const hamElementMembers = [
     children: [
       {
         subtitle: "About Us",
-        href: "/aboutus",
+        href: "/about",
       },
       {
         subtitle: "Team",
-        href: "/team"
+        href: "/about/team"
       },
       {
         subtitle: "Partners",
-        href: "/partners"
+        href: "/about/partners"
       },
       {
         subtitle: "Career",
-        href: "/careers"
+        href: "/about/careers"
       },
       {
         subtitle: "Awards",
-        href: "/awards"
+        href: "/about/awards"
       },
       {
         subtitle: "Press",
-        href: "/press"
+        href: "/about/in-the-press"
       },
       {
         subtitle: 'Partners',
-        href: '/partners',
+        href: '/about/partners',
       },
     ]
   },
@@ -50,7 +50,7 @@ const hamElementMembers = [
       },
       {
         subtitle: "Market Research",
-        href: "/marketresearch"
+        href: "/market-research"
       },
       {
         subtitle: "Brainstorming",
@@ -98,7 +98,7 @@ const hamElementMembers = [
   },
   {
     title: 'Case Studies',
-    href: '/casestudis',
+    href: '/casestudies',
     haveChildren: false,
   },
   {
@@ -111,12 +111,12 @@ const hamElementMembers = [
 
 const HamMenuVarients = {
   hidden: { opacity: 0, x: "100%" },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.2,when: "beforeChildren"} },
-  exit: { opacity: 0, x: "100%", transition: { duration: 0.2,when:"afterChildren" } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.2, when: "beforeChildren" } },
+  exit: { opacity: 0, x: "100%", transition: { duration: 0.2, when: "afterChildren" } },
 };
 
 
-const MobileNav = ({isOpened=false}:{isOpened:boolean}) => {
+const MobileNav = ({ isOpened = false }: { isOpened: boolean }) => {
   const [whichHam, setWhichHam] = useState(1000);
 
   const handleClick = (idx: number) => {
@@ -127,12 +127,12 @@ const MobileNav = ({isOpened=false}:{isOpened:boolean}) => {
     setWhichHam(1000);
   }
   return (
-    <motion.section 
-    variants={HamMenuVarients}
-    initial="hidden"
-    animate="visible"
-    exit="exit"
-    className='absolute top-0 left-0 w-full min-h-screen px-[9%]  flex-col gap-4 lg:hidden bg-primary_blue z-10 text-white flex pt-40 text-2xl overflow-auto'>
+    <motion.section
+      variants={HamMenuVarients}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      className='absolute top-0 left-0 w-full min-h-screen px-[9%]  flex-col gap-4 lg:hidden bg-primary_blue z-10 text-white flex pt-40 text-2xl overflow-auto'>
       {
         hamElementMembers.map((elem, idx) => (
           <div key={idx} className=''>
