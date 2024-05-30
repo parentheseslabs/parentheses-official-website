@@ -2,6 +2,7 @@
 import AboutHero from "@/components/aboutpage/AboutHero";
 import Sale from "../../components/sale";
 import OurHistory from "@/components/aboutpage/OurHistory";
+import OurMission from "@/components/aboutpage/OurMission";
 
 
 const About = () => {
@@ -10,6 +11,7 @@ const About = () => {
       <Sale bg="white" className=""/>
       <AboutHero/>
       <OurHistory/>
+      <OurMission/>
     </div>
   )
 }

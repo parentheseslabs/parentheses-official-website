@@ -11,12 +11,12 @@ const AboutHero = () => {
                         <h1 className=" font-sfpd-bold text-white/70 ">Discover the story</h1>
                         <h1 className=' font-sfpd-bold text-white/70 '>behind <span className='text-white text-[5.5vmax] md:text-[6.5vmax]'>Parentheses</span></h1>
                     </div>
-                    <h2 className='lg:w-[60%] sm:w-full w-[93%] text-base lg:text-base tracking-wider font-sfpd-light'>Elevate Your Business with tailored Apps, Personalized Dashboards, and  Intelligent AI Solutions</h2>
+                    <h2 className='lg:w-[60%] w-[93%] text-base lg:text-base tracking-wider font-sfpd-light'>Elevate Your Business with tailored Apps, Personalized Dashboards, and  Intelligent AI Solutions</h2>
                 </div>
                 <SecondaryButton title='Our Services' />
             </div>
-            <BgGrid className='rotate-180 absolute z-0 top-0 scale-[5] lg:scale-[2] translate-y-12 md:translate-y-7 lg:-translate-y-10' />
-            <BgGrid className=' absolute z-0 bottom-0 scale-[5] lg:scale-[2] -translate-y-10 md:-translate-y-4 lg:translate-y-16 ' />
+            <BgGrid className='rotate-180 absolute z-0 top-0 scale-[5] sm:scale-[4]  xl:scale-[2] translate-y-12 md:translate-y-7 lg:-translate-y-10' />
+            <BgGrid className='absolute z-0 bottom-0 scale-[5] sm:scale-[4]  xl:scale-[2] -translate-y-10 md:-translate-y-4 lg:translate-y-16' />
         </div>
     )
 }
