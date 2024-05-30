@@ -3,6 +3,7 @@ import AboutHero from "@/components/aboutpage/AboutHero";
 import Sale from "../../components/sale";
 import OurHistory from "@/components/aboutpage/OurHistory";
 import OurMission from "@/components/aboutpage/OurMission";
+import OurValues from "@/components/aboutpage/OurValues";
 
 
 const About = () => {
@@ -12,6 +13,7 @@ const About = () => {
       <AboutHero/>
       <OurHistory/>
       <OurMission/>
+      <OurValues/>
     </div>
   )
 }
