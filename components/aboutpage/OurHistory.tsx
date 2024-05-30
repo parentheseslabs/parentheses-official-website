@@ -41,7 +41,7 @@ const OurHistory = () => {
                 <h1 className='text-[3.4vmax] font-sfpd-bold'>Our History</h1>
                 <h2 className='text-[1.6rem] text-black/70 font-sfpd-light tracking-wide'>The founding history of Parentheses</h2>
             </div>
-            <div className='flex lg:flex-row flex-col lg:w-[80%] justify-between relative h-[40rem] lg:h-fit'>
+            <div className='flex lg:flex-row flex-col lg:w-[75%] justify-between relative h-[40rem] lg:h-fit'>
                 <div className='w-full absolute top-1/2 -translate-y-[50%] left-0 border-dashed border border-gray-500 group hidden lg:flex'></div>
                 <div className='w-fit absolute top-0 left-[50%] border-dashed border-l border-gray-500 group lg:hidden flex min-h-[40rem]'></div>
                 {
