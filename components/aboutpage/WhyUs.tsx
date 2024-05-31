@@ -27,7 +27,7 @@ interface cardProp {
 
 const WhyUs = () => {
     return (
-        <div className='w-full flex justify-center items-center py-32 flex-col gap-32'>
+        <div className='w-full flex justify-center items-center py-32 flex-col gap-16 lg:gap-32'>
             <OneBlueWordHeading heading='Why Choose Us?' wordNum={3} />
             <div className='flex w-[93%] lg:flex-row flex-col gap-14 lg:gap-0 items-center'>
                 <div className=' w-full relative flex justify-center h-[35rem] items-center'>
