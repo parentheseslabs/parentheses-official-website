@@ -5,6 +5,8 @@ import OurHistory from "@/components/aboutpage/OurHistory";
 import OurMission from "@/components/aboutpage/OurMission";
 import OurValues from "@/components/aboutpage/OurValues";
 import Team from "@/components/aboutpage/Team";
+import OurApproach from "@/components/aboutpage/OurApproach";
+import WhyUs from "@/components/aboutpage/WhyUs";
 
 const About = () => {
   return (
@@ -15,6 +17,8 @@ const About = () => {
       <OurMission/>
       <OurValues/>
       <Team/>
+      <OurApproach/>
+      <WhyUs/>
     </div>
   )
 }
