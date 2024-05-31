@@ -2,6 +2,8 @@ import React from 'react'
 import OneBlueWordHeading from '../OneBlueWordHeading'
 import TeamsCard from './TeamsCard'
 import PrimaryButton from '../buttons/PrimaryButton'
+import BlockImageLight from '@/public/svgs/blockImageLight.svg'
+
 
 
 const team = [
@@ -111,7 +113,7 @@ const advisor =[
 
 const Team = () => {
     return (
-        <section className='w-full flex flex-col items-center justify-center py-24 gap-32'>
+        <section className='w-full flex flex-col items-center justify-center py-24 gap-32 relative'>
             <div className='flex flex-col items-center justify-center w-[92%] gap-28'>
                 <OneBlueWordHeading heading='Meet our core team' wordNum={3} />
                 <div className='flex gap-10 flex-wrap justify-24 justify-center'>
@@ -134,6 +136,7 @@ const Team = () => {
                     }
                 </div>
             </div>
+            <BlockImageLight className='absolute top-48 md:top-[5%] right-0 -z-[1] w-[15rem] md:w-[30rem]'/>
         </section>
     )
 }
