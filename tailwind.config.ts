@@ -18,6 +18,7 @@ const config: Config = {
         'text_black':'#161616',
         'bg_gray':'#DFDFDF',
         'highlight':"#D7E8FF",
+        'card_dark_blue':"#205ECC",
       },
       fontFamily:{
         'sfpd-regular':['sfpd-regular','system-ui','sans-serif'],
