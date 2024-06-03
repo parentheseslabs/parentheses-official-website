@@ -1,14 +1,18 @@
 'use client'
+import dynamic from 'next/dynamic'
 import ParenthesesLogo from '@/public/logo/ParenthesesLogo.svg'
 import React, { useState, useEffect } from 'react'
 import DropDownArrow from '@/public/svgs/dropdownArrow.svg'
 import Link from 'next/link'
-import SecondaryButton from '../buttons/SecondaryButton'
-import MobileNav from './MobileNav'
+
+const SecondaryButton = dynamic(()=>import('../buttons/SecondaryButton'))
+const MobileNav =dynamic(()=>import('@/components/navbar/MobileNav'));
+
 import MobileLogo from '@/public/logo/moblieLogo.svg'
 import { AnimatePresence } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 import MobileDarkLogo from '@/public/logo/mobileDarkLogo.svg'
+
 
 
 
@@ -115,22 +119,12 @@ const navElementMembers = [
     },
 ]
 
-interface  props{
-    theme?:"light"|"dark" ,
-}
 
-const NavBar: React.FC<props> = ({theme="light"}) => {
-    const pathname = usePathname();
-    const [urlpath,setUrlPath]=useState("/")
+const NavBar: React.FC = () => {
     const [isNavOpened, setIsnavOpened] = useState(1000);
     const [isHamOpened, setisHamOpened] = useState(false);
-    useEffect(()=>{
-        if(urlpath!==pathname){
-            setIsnavOpened(1000);
-            setisHamOpened(false);
-        }
-        setUrlPath(pathname);
-    },[pathname])
+    const pathname = usePathname();
+    const [urlpath,setUrlPath]=useState("/")
     useEffect(() => {
         if (isHamOpened) {
             document.body.style.overflow = 'hidden'
@@ -138,6 +132,13 @@ const NavBar: React.FC<props> = ({theme="light"}) => {
             document.body.style.overflow = 'auto'
         }
     }, [isHamOpened])
+    useEffect(()=>{
+        if(urlpath!==pathname){
+            setIsnavOpened(1000);
+            setisHamOpened(false);
+        }
+        setUrlPath(pathname);
+    },[pathname])
 
     const handleClick = (idx: number) => {
         if (idx !== isNavOpened) {
@@ -154,7 +155,7 @@ const NavBar: React.FC<props> = ({theme="light"}) => {
     return (
         <section className='fixed pt-14 w-full justify-center px-[3.5%] z-10'>
             <div className='lg:bg-white lg:backdrop-blur-lg h-fit w-full flex rounded-full lg:border-[1.5px] border-primary_blue gap justify-between px-5 items-center relative z-50'>
-                <Link href={'/'}>
+                <Link href={'/'} aria-label='Go to home page'>
                     <ParenthesesLogo className='hidden lg:flex relative z-50' />
                     {
                         pathname==='/about'?

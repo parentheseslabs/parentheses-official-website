@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import NavBar from '@/components/navbar/index';
+const NavBar = dynamic(()=>import('@/components/navbar/index'))
+import dynamic from "next/dynamic";
 
 
 

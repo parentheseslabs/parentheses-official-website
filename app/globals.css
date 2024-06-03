@@ -6,18 +6,22 @@
 @font-face {
   font-family: sfpd-regular;
   src: url("../public/fonts/SF-Pro-Display-Regular.otf");
+  font-display: swap;
 }
 @font-face {
   font-family: sfpd-semibold;
   src: url("../public/fonts/SF-Pro-Display-Semibold.otf");
+  font-display: swap;
 }
 @font-face {
   font-family: sfpd-bold;
   src: url("../public/fonts/SF-Pro-Display-Bold.otf");
+  font-display: swap;
 }
 @font-face {
   font-family: sfpd-light;
   src: url("../public/fonts/SF-Pro-Display-Light.otf");
+  font-display: swap;
 }
 
 *{

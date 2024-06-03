@@ -8,20 +8,22 @@ import Team from "@/components/aboutpage/Team";
 import OurApproach from "@/components/aboutpage/OurApproach";
 import WhyUs from "@/components/aboutpage/WhyUs";
 import NoteWorthyAchievements from "@/components/aboutpage/NoteWorthyAchievements";
-
+import { Suspense } from "react";
 
 const About = () => {
   return (
     <div className='min-h-[100svh]'>
-      <Sale bg="white" className=""/>
-      <AboutHero/>
-      <OurHistory/>
-      <OurMission/>
-      <OurValues/>
-      <Team/>
-      <OurApproach/>
-      <WhyUs/>
-      <NoteWorthyAchievements/>
+      <Sale bg="white" className="" />
+      <AboutHero />
+      <Suspense fallback={<div>Loading History...</div>}>
+        <OurHistory />
+      </Suspense>
+      <OurMission />
+      <OurValues />
+      <Team />
+      <OurApproach />
+      <WhyUs />
+      <NoteWorthyAchievements />
     </div>
   )
 }

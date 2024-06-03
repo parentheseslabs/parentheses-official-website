@@ -2,20 +2,23 @@ import React from 'react'
 import BgGridGrey from '@/public/background/bgGridGrey.svg'
 import OneBlueWordHeading from '../OneBlueWordHeading'
 import OurApproachCard from './OurApproachCard'
+import Deliver from '@/public/svgs/deliver.svg'
+import Develop from '@/public/svgs/develop.svg'
+import Discover from '@/public/svgs/discover.svg'
 
 const approaches = [
     {
-        icon: "/svgs/discover.svg",
+        icon: <Discover className='stroke-primary_blue group-hover:stroke-white stroke-[1px] duration-300 group-hover:fill-white fill-primary_blue'/>,
         title: "Discover",
         desc: "From market entry analysis to tech strategy and implementation is covered."
     },
     {
-        icon: "/svgs/develop.svg",
+        icon: <Develop className='stroke-primary_blue group-hover:stroke-white stroke-[1px] duration-300 fill-primary_blue group-hover:fill-white'/>,
         title: "Develop",
         desc: "Agile development and QA"
     },
     {
-        icon: "/svgs/deliver.svg",
+        icon: <Deliver className='stroke-primary_blue group-hover:stroke-white stroke-[3px] duration-300'/>,
         title: "Deliver",
         desc: "Comprehensive documentation during handoff to set your future team for success."
     },
