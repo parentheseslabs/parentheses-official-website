@@ -24,7 +24,7 @@ const Contact = () => {
                 </div>
                 <div className='flex gap-6 md:flex-row flex-col'>
                     <input placeholder='Your Name*' type='text' className='placeholder:italic p-6 bg-gray-100 border-gray-300 border rounded-lg w-full' />
-                    <input placeholder='Your Name*' type='text' className='placeholder:italic p-4 bg-gray-100 border-gray-300 border rounded-lg w-full' />
+                    <input placeholder='Your Email*' type='text' className='placeholder:italic p-4 bg-gray-100 border-gray-300 border rounded-lg w-full' />
                 </div>
 
             </form>
