@@ -12,7 +12,7 @@ interface cardProps {
 
 const CaseStudiesCard = ({ ...props }: cardProps) => {
     return (
-        <div className='w-[80%] flex md:flex-row flex-col gap-5 md:gap-8 md:even:flex-row-reverse items-center'>
+        <div className='w-[80%] flex md:flex-row flex-col gap-5 md:gap-8 md:odd:flex-row-reverse items-center'>
             <Image src={props.img} width={478} height={589} alt='cases' className='w-full md:w-2/3'></Image>
             <div className='flex  justify-center w-full lg:px-10 flex-col gap-6 md:gap-10 md:items-start items-center'>
                 <h1 className='py-1 px-3 bg-blue-50 text-primary_blue  md:w-fit rounded-full text-sm'>{props.type}</h1>

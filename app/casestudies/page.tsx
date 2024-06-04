@@ -1,6 +1,8 @@
 import React from 'react'
 import CaseHero from '@/components/casestudiespage/CaseHero'
 import CaseStudiesCard from '@/components/casestudiespage/CaseStudiesCard'
+import BlockImageLight from '@/public/svgs/blockImageLight.svg'
+
 const caseStudies = [
   {
     type: "Full Stack Development",
@@ -27,12 +29,14 @@ const page = () => {
   return (
     <main className='flex flex-col items-center'>
       <CaseHero />
-      <div className=' w-full flex flex-col items-center gap-24 md:gap-16 py-36'>
+      <div className=' w-full flex flex-col items-center gap-24 md:gap-16 py-40 md:py-72 relative'>
+        <BlockImageLight className='absolute w-[60%] md:w-[25%] top-20 md:top-40 -left-10 -z-[1]' />
         {
           caseStudies.map((item, idx) => (
             <CaseStudiesCard key={idx} {...item} />)
           )
         }
+        <BlockImageLight className='absolute w-[60%] md:w-[25%] bottom-0 md:bottom-0 -right-5 md:-right-10 -z-[1]' />
       </div>
     </main>
   )
