@@ -49,7 +49,7 @@ const InsightsHero = () => {
             <div className='flex flex-col md:hidden gap-8 items-center'>
                 {
                     data.map((item,idx)=>(
-                        <InsightHeroCard {...item}/>
+                        <InsightHeroCard key={idx} {...item}/>
                     ))
                 }
             </div>
