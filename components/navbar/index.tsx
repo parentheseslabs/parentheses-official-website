@@ -153,8 +153,8 @@ const NavBar: React.FC = () => {
     }
 
     return (
-        <section className='fixed pt-14 w-full justify-center px-[3.5%] z-10'>
-            <div className='lg:bg-white lg:backdrop-blur-lg h-fit w-full flex rounded-full lg:border-[1.5px] border-primary_blue gap justify-between px-5 items-center relative z-50'>
+        <section className='fixed pt-14 w-full justify-center px-[3.5%] z-[100]'>
+            <div className={`${pathname==='/about'?"bg-white":"lg:bg-white/50"} lg:backdrop-blur-lg h-fit w-full flex rounded-full lg:border-[1.5px] border-primary_blue gap justify-between px-5 items-center relative z-50`}>
                 <Link href={'/'} aria-label='Go to home page'>
                     <ParenthesesLogo className='hidden lg:flex relative z-50' />
                     {
