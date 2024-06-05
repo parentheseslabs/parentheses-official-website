@@ -5,8 +5,8 @@ import React, { useState, useEffect } from 'react'
 import DropDownArrow from '@/public/svgs/dropdownArrow.svg'
 import Link from 'next/link'
 
-const SecondaryButton = dynamic(()=>import('../buttons/SecondaryButton'))
-const MobileNav =dynamic(()=>import('@/components/navbar/MobileNav'));
+const SecondaryButton = dynamic(() => import('../buttons/SecondaryButton'))
+const MobileNav = dynamic(() => import('@/components/navbar/MobileNav'));
 
 import MobileLogo from '@/public/logo/moblieLogo.svg'
 import { AnimatePresence } from 'framer-motion'
@@ -15,116 +15,11 @@ import MobileDarkLogo from '@/public/logo/mobileDarkLogo.svg'
 import navElementMembers from '@/public/navlinks/data'
 
 
-
-// const navElementMembers = [
-//     {
-//         title: 'About',
-//         haveChildren: true,
-//         children: [
-//             {
-//                 subtitle: "About Us",
-//                 href: "/about",
-//             },
-//             {
-//                 subtitle: "Team",
-//                 href: "/about/team"
-//             },
-//             {
-//                 subtitle: "Partners",
-//                 href: "/about/partners"
-//             },
-//             {
-//                 subtitle: "Career",
-//                 href: "/about/careers"
-//             },
-//             {
-//                 subtitle: "Awards",
-//                 href: "/about/awards"
-//             },
-//             {
-//                 subtitle: "Press",
-//                 href: "/about/in-the-press"
-//             },
-//             {
-//                 subtitle: 'Partners',
-//                 href: '/about/partners',
-//             },
-//         ]
-//     },
-//     {
-//         title: 'Services',
-//         haveChildren: true,
-//         children: [
-//             {
-//                 subtitle: "Ideation",
-//                 href: "/ideation",
-//             },
-//             {
-//                 subtitle: "Market Research",
-//                 href: "/market-research"
-//             },
-//             {
-//                 subtitle: "Brainstorming",
-//                 href: "/brainstorming"
-//             },
-//             {
-//                 subtitle: "Designing",
-//                 href: "/designing"
-//             },
-//             {
-//                 subtitle: "Branding",
-//                 href: "/branding"
-//             },
-//             {
-//                 subtitle: "Prototype",
-//                 href: "/prototype"
-//             },
-//             {
-//                 subtitle: "Development",
-//                 href: "/development"
-//             },
-//         ]
-//     },
-//     {
-//         title: 'Resources',
-//         haveChildren: true,
-//         children: [
-//             {
-//                 subtitle: "Community",
-//                 href: "/community",
-//             },
-//             {
-//                 subtitle: "Creative Tools",
-//                 href: "/creativetools"
-//             },
-//             {
-//                 subtitle: "Development Tools",
-//                 href: "/developmenttools"
-//             },
-//             {
-//                 subtitle: "Headhunting Service",
-//                 href: "/headhuntingtools"
-//             },
-//         ]
-//     },
-//     {
-//         title: 'Case Studies',
-//         href: '/casestudies',
-//         haveChildren: false,
-//     },
-//     {
-//         title: 'Insights',
-//         href: '/insights',
-//         haveChildren: false,
-//     },
-// ]
-
-
 const NavBar: React.FC = () => {
     const [isNavOpened, setIsnavOpened] = useState(1000);
     const [isHamOpened, setisHamOpened] = useState(false);
     const pathname = usePathname();
-    const [urlpath,setUrlPath]=useState("/")
+    const [urlpath, setUrlPath] = useState("/")
     useEffect(() => {
         if (isHamOpened) {
             document.body.style.overflow = 'hidden'
@@ -132,13 +27,13 @@ const NavBar: React.FC = () => {
             document.body.style.overflow = 'auto'
         }
     }, [isHamOpened])
-    useEffect(()=>{
-        if(urlpath!==pathname){
+    useEffect(() => {
+        if (urlpath !== pathname) {
             setIsnavOpened(1000);
             setisHamOpened(false);
         }
         setUrlPath(pathname);
-    },[pathname])
+    }, [pathname])
 
     const handleClick = (idx: number) => {
         if (idx !== isNavOpened) {
@@ -154,14 +49,14 @@ const NavBar: React.FC = () => {
 
     return (
         <section className='fixed pt-14 w-full justify-center px-[3.5%] z-[100]'>
-            <div className={`${pathname==='/about'?"bg-white":"lg:bg-white/50"} lg:backdrop-blur-lg h-fit w-full flex rounded-full lg:border-[1.5px] border-primary_blue gap justify-between px-5 items-center relative z-50`}>
+            <div className={`${pathname === '/about' ? "lg:bg-white" : "lg:bg-white/50"} lg:backdrop-blur-lg h-fit w-full flex rounded-full lg:border-[1.5px] border-primary_blue gap justify-between px-5 items-center relative z-50`}>
                 <Link href={'/'} aria-label='Go to home page'>
                     <ParenthesesLogo className='hidden lg:flex relative z-50' />
                     {
-                        pathname==='/about'?
-                        <MobileDarkLogo className='flex lg:hidden drop-shadow-3xl '/>
-                        :
-                        <MobileLogo className='flex lg:hidden drop-shadow-3xl ' />
+                        pathname === '/about' ?
+                            <MobileDarkLogo className='flex lg:hidden drop-shadow-3xl ' />
+                            :
+                            <MobileLogo className='flex lg:hidden drop-shadow-3xl ' />
                     }
                 </Link>
                 <div className='duration-500 gap-9 hidden lg:flex'>
@@ -216,22 +111,24 @@ const NavBar: React.FC = () => {
 
                 {/* Hamburger button*/}
                 <div className='flex gap-4 items-center'>
-                    <SecondaryButton title='LET&apos;S TALK' handleClick={buttonFunction} />
+                    <a href="/contactus">
+                        <SecondaryButton title='LET&apos;S TALK' handleClick={buttonFunction} />
+                    </a>
                     <div
                         onClick={() => setisHamOpened(!isHamOpened)}
-                        className={` lg:hidden rounded-full relative size-11 flex flex-col gap-1 justify-center p-2 ${pathname!=='/about' && !isHamOpened && " bg-primary_blue "} ${pathname!=='/about' && isHamOpened && "bg-white"} ${isHamOpened &&"items-center"} ${pathname==='/about'&& "bg-white"} duration-300`}>
+                        className={` lg:hidden rounded-full relative size-11 flex flex-col gap-1 justify-center p-2 ${pathname !== '/about' && !isHamOpened && " bg-primary_blue "} ${pathname !== '/about' && isHamOpened && "bg-white"} ${isHamOpened && "items-center"} ${pathname === '/about' && "bg-white"} duration-300`}>
 
 
                         <div
-                            className={` pt-[0.2rem] ${isHamOpened && "rotate-45 translate-y-[0.28rem] w-[80%] bg-primary_blue"} duration-300 relative z-20 rounded-full ${pathname!=='/about'&& !isHamOpened? " bg-white ":" bg-primary_blue "}`}
+                            className={` pt-[0.2rem] ${isHamOpened && "rotate-45 translate-y-[0.28rem] w-[80%] bg-primary_blue"} duration-300 relative z-20 rounded-full ${pathname !== '/about' && !isHamOpened ? " bg-white " : " bg-primary_blue "}`}
                         ></div>
                         <div
-                            className={`w-[80%]  pt-[0.19rem] ${isHamOpened &&'/about' && "-rotate-45 -translate-y-[0.18rem] bg-primary_blue"
-                                } duration-300 relative z-20 rounded-full ${pathname!=='/about' && !isHamOpened ? " bg-white ":" bg-primary_blue "}`}
+                            className={`w-[80%]  pt-[0.19rem] ${isHamOpened && '/about' && "-rotate-45 -translate-y-[0.18rem] bg-primary_blue"
+                                } duration-300 relative z-20 rounded-full ${pathname !== '/about' && !isHamOpened ? " bg-white " : " bg-primary_blue "}`}
                         ></div>
                         <div
                             className={`w-[50%] pt-[0.2rem] ${isHamOpened && "hidden"
-                                } duration-700 relative z-20 rounded-full ${pathname==='/about'? " bg-primary_blue " :"bg-white"}`}
+                                } duration-700 relative z-20 rounded-full ${pathname === '/about' ? " bg-primary_blue " : "bg-white"}`}
                         ></div>
 
 
