@@ -4,7 +4,7 @@ import PrimaryButton from '../buttons/PrimaryButton'
 
 const CaseHero = () => {
     return (
-        <div className='bg-white min-h-[100svh] relative z-0 overflow-hidden  flex flex-col items-center pt-5 justify-center text-black text-center min-w-full gap-14'>
+        <div id='hero' className='bg-white min-h-[100svh] relative z-0 overflow-hidden  flex flex-col items-center pt-5 justify-center text-black text-center min-w-full gap-14'>
             <div className='flex flex-col lg:w-2/3 items-center justify-center'>
                 <div className='flex flex-col gap-8 w-full items-center'>
                     <h1 className='text-primary_blue text-xl md:text-2xl translate-y-6'>Case Studies</h1>
