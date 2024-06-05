@@ -1,14 +1,18 @@
 import React from 'react'
 import SecondaryButton from '../buttons/SecondaryButton'
 
-const Contact = () => {
+const Contact = ({ heading = true }: { heading?: boolean }) => {
     return (
         <section className='min-w-full min-h-screen flex-col flex items-center gap-16 justify-center py-20'>
-            <h1 className='text-primary_blue'>CONTACT US</h1>
-            <div className='flex items-center flex-col gap-3 md:gap-8'>
-                <h1 className='text-[3vmax] font-sfpd-bold'>Let us know how can we help</h1>
-                <h2>Got something in mind? We&apos;d love to help.</h2>
-            </div>
+            {
+                heading && <>
+                    <h1 className='text-primary_blue'>CONTACT US</h1>
+                    <div className='flex items-center flex-col gap-3 md:gap-8'>
+                        <h1 className='text-[3vmax] font-sfpd-bold'>Let us know how can we help</h1>
+                        <h2>Got something in mind? We&apos;d love to help.</h2>
+                    </div>
+                </>
+            }
             <form className='w-[80%] space-y-6'>
                 <div className='flex flex-col gap-2'>
                     <h1 className='text-xl md:text-2xl'>What are you looking for?</h1>
@@ -28,7 +32,7 @@ const Contact = () => {
                 </div>
 
             </form>
-            <SecondaryButton title='SEND ENQUERY'/>
+            <SecondaryButton title='SEND ENQUERY' />
 
         </section>
     )
