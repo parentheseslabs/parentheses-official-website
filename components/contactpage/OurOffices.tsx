@@ -27,7 +27,7 @@ const OurOffices = () => {
     return (
         <div className='flex flex-col items-center min-h-screen py-36 px-[4%] gap-20 text-black/60 text-sm sm:text-base'>
             <OneBlueWordHeading heading='Out Offices' wordNum={2} />
-            <Image src={'/raster/map.webp'} width={1231} height={730} aria-label='Our all offices marked on the world map.' alt='offices on map'></Image>
+            <Image src={'/raster/Map.webp'} width={1231} height={730} aria-label='Our all offices marked on the world map.' alt='offices on map'></Image>
             <div className='flex flex-wrap gap-12 justify-center w-[97%]'>
                 {
                     offices.map((item, idx) => (
