@@ -56,9 +56,6 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <div className='absolute bottom-0 border-dashed border-white/40 border-t py-2 w-full flex justify-center'>©Parentheses Labs, 2024. All rights reserved.</div>
-      <a href='#hero' className=' absolute right-[5vmax] top-[5vmax] bg-white rounded-full p-3 md:p-3 lg:p-4'>
-        <div className=' size-[1.8vmax] border-l-4 border-b-4 border-primary_blue rotate-[135deg] translate-y-[0.5vmax]'></div>
-      </a>
       <BlockImageDark className=' absolute left-0 top-0 w-[60%] md:-left-40  md:-top-[30%] opacity-70' />
     </div>
   )

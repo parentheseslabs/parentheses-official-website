@@ -46,21 +46,21 @@ const NavBar: React.FC = () => {
 
 
 
-    useEffect(()=>{
-        function handleScroll(){
-            const scrollPos= window.scrollY;
-            if(scrollPos>20){
+    useEffect(() => {
+        function handleScroll() {
+            const scrollPos = window.scrollY;
+            if (scrollPos > 20) {
                 setIsScrolled(true)
-            }else{
+            } else {
                 setIsScrolled(false)
             }
         }
-        window.addEventListener('scroll',handleScroll)
-    },[])
+        window.addEventListener('scroll', handleScroll)
+    }, [])
 
     return (
-        <section id='nav' className={`fixed ${isScrolled ? "pt-2" :"pt-14"} w-full justify-center px-[3.5%] z-[100] duration-500`}>
-            <div  className={`${pathname === '/about' ? "lg:bg-white" : "lg:bg-white/50"} lg:backdrop-blur-lg h-fit w-full flex rounded-full lg:border-[1.5px] border-primary_blue gap justify-between px-5 items-center relative z-50`}>
+        <section id='nav' className={`fixed ${isScrolled ? "pt-2" : "pt-14"} w-full justify-center px-[3.5%] z-[100] duration-500`}>
+            <div className={`${pathname === '/about' ? "lg:bg-white" : "lg:bg-white/50"} lg:backdrop-blur-lg h-fit w-full flex rounded-full lg:border-[1.5px] border-primary_blue gap justify-between px-5 items-center relative z-50`}>
                 <Link href={'/'} aria-label='Go to home page'>
                     <ParenthesesLogo className='hidden lg:flex relative z-50' />
                     {
@@ -154,6 +154,9 @@ const NavBar: React.FC = () => {
                     <MobileNav isOpened={isHamOpened} />
                 }
             </AnimatePresence>
+            <a href='#hero' className={`${isScrolled?"scale-100":"scale-0"} fixed right-[3vmax] bottom-[3vmax] bg-white rounded-full p-2 md:p-3 lg:p-4 border-primary_blue border duration-500`}>
+                <div className=' size-[1.3vmax] border-l-4 border-b-4 border-primary_blue rotate-[135deg] translate-y-[0.3vmax]'></div>
+            </a>
         </section>
     )
 }

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import "./globals.css";
-const NavBar = dynamic(()=>import('@/components/navbar/index'))
-const Footer = dynamic(()=>import('@/components/footer/Footer'))
+const NavBar = dynamic(() => import('@/components/navbar/index'))
+const Footer = dynamic(() => import('@/components/footer/Footer'))
 
 
 export const metadata: Metadata = {
@@ -18,9 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sfpd-regular`}>
-        <NavBar/>
+        <NavBar />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );
