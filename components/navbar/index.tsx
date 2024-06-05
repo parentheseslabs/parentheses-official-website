@@ -18,6 +18,7 @@ import navElementMembers from '@/public/navlinks/data'
 const NavBar: React.FC = () => {
     const [isNavOpened, setIsnavOpened] = useState(1000);
     const [isHamOpened, setisHamOpened] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
     const pathname = usePathname();
     const [urlpath, setUrlPath] = useState("/")
     useEffect(() => {
@@ -43,13 +44,23 @@ const NavBar: React.FC = () => {
         setIsnavOpened(100);
     }
 
-    const buttonFunction = () => {
 
-    }
+
+    useEffect(()=>{
+        function handleScroll(){
+            const scrollPos= window.scrollY;
+            if(scrollPos>20){
+                setIsScrolled(true)
+            }else{
+                setIsScrolled(false)
+            }
+        }
+        window.addEventListener('scroll',handleScroll)
+    },[])
 
     return (
-        <section className='fixed pt-14 w-full justify-center px-[3.5%] z-[100]'>
-            <div className={`${pathname === '/about' ? "lg:bg-white" : "lg:bg-white/50"} lg:backdrop-blur-lg h-fit w-full flex rounded-full lg:border-[1.5px] border-primary_blue gap justify-between px-5 items-center relative z-50`}>
+        <section id='nav' className={`fixed ${isScrolled ? "pt-2" :"pt-14"} w-full justify-center px-[3.5%] z-[100] duration-500`}>
+            <div  className={`${pathname === '/about' ? "lg:bg-white" : "lg:bg-white/50"} lg:backdrop-blur-lg h-fit w-full flex rounded-full lg:border-[1.5px] border-primary_blue gap justify-between px-5 items-center relative z-50`}>
                 <Link href={'/'} aria-label='Go to home page'>
                     <ParenthesesLogo className='hidden lg:flex relative z-50' />
                     {
@@ -112,7 +123,7 @@ const NavBar: React.FC = () => {
                 {/* Hamburger button*/}
                 <div className='flex gap-4 items-center'>
                     <a href="/contactus">
-                        <SecondaryButton title='LET&apos;S TALK' handleClick={buttonFunction} />
+                        <SecondaryButton title='LET&apos;S TALK' />
                     </a>
                     <div
                         onClick={() => setisHamOpened(!isHamOpened)}

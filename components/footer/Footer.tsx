@@ -10,10 +10,6 @@ import data from '@/public/navlinks/data'
 
 const Footer: React.FC = () => {
 
-  const handleScroll  = () =>{
-    document.body.scrollTo(0,0); 
-  }
-
   const linksHaveChildren = data.filter((item) => (item.haveChildren));
   const onlyLinks = data.filter((item) => (!item.haveChildren))
   return (

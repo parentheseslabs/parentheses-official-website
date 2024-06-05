@@ -2,6 +2,7 @@ import React from 'react'
 import CaseHero from '@/components/casestudiespage/CaseHero'
 import CaseStudiesCard from '@/components/casestudiespage/CaseStudiesCard'
 import BlockImageLight from '@/public/svgs/blockImageLight.svg'
+import Sale from '@/components/sale'
 
 const caseStudies = [
   {
@@ -28,6 +29,7 @@ const caseStudies = [
 const page = () => {
   return (
     <main className='flex flex-col items-center overflow-hidden'>
+      <Sale bg='blue'/>
       <CaseHero />
       <div className=' w-full flex flex-col items-center gap-24 md:gap-16 py-40 md:py-72 relative'>
         <BlockImageLight className='absolute w-[60%] md:w-[25%] top-20 md:top-40 -left-10 -z-[1]' />

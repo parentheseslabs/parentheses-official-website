@@ -35,7 +35,7 @@ const data = [
 
 const InsightsHero = () => {
     return (
-        <section className=' flex pt-40 pb-28 px-[7%] relative md:flex-row flex-col gap-16 md:gap-0'>
+        <section id='hero' className=' flex pt-40 pb-28 px-[7%] relative md:flex-row flex-col gap-16 md:gap-0'>
             <div className='w-full space-y-6 md:space-y-10 flex flex-col justify-center'>
                 <div className='font-sfpd-bold text-[3.75vmax] space-y-3'>
                     <h1 className='text-primary_blue text-base md:text-xl font-sfpd-regular'>Insights</h1>
