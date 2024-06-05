@@ -4,7 +4,7 @@ import SecondaryButton from '../buttons/SecondaryButton';
 
 const AboutHero = () => {
     return (
-        <div className='bg-primary_blue min-h-[100svh] relative z-0 overflow-hidden  flex flex-col items-center pt-5 justify-center text-white text-center min-w-full'>
+        <div id='hero' className='bg-primary_blue min-h-[100svh] relative z-0 overflow-hidden  flex flex-col items-center pt-5 justify-center text-white text-center min-w-full'>
             <div className='flex flex-col gap-16 lg:gap-16 lg:w-2/3 items-center justify-center'>
                 <div className='flex flex-col gap-8 w-full items-center drop-shadow-xl'>
                     <div className='flex text-[4.5vmax] md:text-[5.5vmax] flex-col  justify-center items-center '>
