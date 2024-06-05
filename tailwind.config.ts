@@ -31,6 +31,9 @@ const config: Config = {
       },
       screens:{
         'xs': "375px"
+      },
+      boxShadow:{
+        'allside': '1px 1px 20px -4px rgba(0, 0, 0, 0.25)',
       }
     },
   },
