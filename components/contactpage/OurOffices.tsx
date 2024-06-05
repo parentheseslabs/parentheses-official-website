@@ -10,15 +10,15 @@ const offices = [
         ph: "+91 8524896654"
     },
     {
-        location: "140L, 5th Main Rd, Sector 6, HSR Layout, Bengaluru, Karnataka 560102, India",
+        location: "116/C, N.S. Sarani, Halisahar, North 24 Parganas, Kolkata, WB 743134",
         ph: "+91 8524896654"
     },
     {
-        location: "140L, 5th Main Rd, Sector 6, HSR Layout, Bengaluru, Karnataka 560102, India",
+        location: "266 Washington Ct, Sebastopol, CA, United States, 95472",
         ph: "+91 8524896654"
     },
     {
-        location: "140L, 5th Main Rd, Sector 6, HSR Layout, Bengaluru, Karnataka 560102, India",
+        location: "Apt #508, 1101 Rue Saint-Urbain, Montreal, QC, H2Z 1K8",
         ph: "+91 8524896654"
     },
 ]
