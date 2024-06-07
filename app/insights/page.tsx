@@ -5,7 +5,8 @@ import BlogSection from '@/components/insightspage/BlogSection'
 
 
 
-const page = () => {
+const page = async() => {
+  
   return (
     <main className='overflow-hidden h-full'>
         <Sale bg='blue'/>
