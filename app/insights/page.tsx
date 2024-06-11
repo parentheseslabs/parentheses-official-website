@@ -3,8 +3,6 @@ import Sale from '@/components/sale'
 import InsightsHero from '@/components/insightspage/InsightsHero'
 import BlogSection from '@/components/insightspage/BlogSection'
 
-
-
 const page = async() => {
   
   return (
