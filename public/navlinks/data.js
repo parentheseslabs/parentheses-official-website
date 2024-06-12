@@ -38,6 +38,10 @@ const navElementMembers =[
         haveChildren: true,
         children: [
             {
+                subtitle: "All Services",
+                href: "/services",
+            },
+            {
                 subtitle: "Ideation",
                 href: "/ideation",
             },
