@@ -60,9 +60,9 @@ const ConversationCard = () => {
 
                     <div className={``}>
                         <div className={` ${isLoading ? "scale-100 duration-300 h-fit p-4" : "scale-0 h-0"} origin-bottom-left bg-primary_blue w-fit rounded-2xl flex gap-1`}>
-                            <div className={` ${isLoading ? "scale-100 duration-300 h-fit p-4" : "scale-0 h-0"} p-1 bg-white rounded-full animate-pulse `}></div>
-                            <div className={` ${isLoading ? "scale-100 duration-300 h-fit p-4" : "scale-0 h-0"} p-1 bg-white rounded-full animate-pulse `}></div>
-                            <div className={` ${isLoading ? "scale-100 duration-300 h-fit p-4" : "scale-0 h-0"} p-1 bg-white rounded-full animate-pulse `}></div>
+                            <div className={` ${isLoading ? "scale-100 duration-300 h-fit p-1" : "scale-0 h-0"} p-1 bg-white rounded-full animate-pulse `}></div>
+                            <div className={` ${isLoading ? "scale-100 duration-300 h-fit p-1" : "scale-0 h-0"} p-1 bg-white rounded-full animate-pulse `}></div>
+                            <div className={` ${isLoading ? "scale-100 duration-300 h-fit p-1" : "scale-0 h-0"} p-1 bg-white rounded-full animate-pulse `}></div>
                         </div>
                         <h1 className={` ${selectedOption ? "scale-100 duration-300 h-fit" : "scale-0 h-0"} origin-bottom-left bg-primary_blue/30 w-fit p-4 rounded-2xl rounded-bl-none`}>We are capable of Developing Apps tailored to your vision.</h1>
 
