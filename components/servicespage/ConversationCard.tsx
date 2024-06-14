@@ -100,7 +100,7 @@ export const Form = () => {
         setFormSubmitted(true);
     }
     return (
-        <div className='flex justify-start items-center flex-col gap-4 h-full text-center'>
+        <div className='flex justify-start items-center flex-col gap-6 h-full text-center'>
             {
                 formSubmitted ?
                     <>
