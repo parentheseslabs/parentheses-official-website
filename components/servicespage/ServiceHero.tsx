@@ -5,7 +5,7 @@ import BgGridDark from '@/public/background/bgGridGrey.svg'
 
 const ServiceHero = () => {
   return (
-    <div id='hero' className='bg-white min-h-[100svh] relative z-0 overflow-hidden  flex lg:flex-row flex-col items-center  justify-center lg:justify-between text-black min-w-full px-[6%] pt-36 lg:pt-16 gap-16 pb-20'>
+    <div id='hero' className='bg-white min-h-[100svh] relative z-0 overflow-hidden  flex lg:flex-row flex-col items-center  justify-center lg:justify-between text-black min-w-full px-[6%] pt-36 lg:pt-[4.5rem] gap-16 pb-20'>
             <div className='flex flex-col lg:w-[55%] items-start justify-center font-sfpd-bold'>
                     <h1 className='text-primary_blue'>Services</h1>
                     <div className='flex text-[4vmax] md:text-[4.5vmax] flex-col  justify-center'>
