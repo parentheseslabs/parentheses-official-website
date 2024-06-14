@@ -39,7 +39,7 @@ const page = async ({ params }: { params: { uid: string } }) => {
               <div className='space-y-3'>
                 <h1 className='text-base sm:text-lg md:text-xl'>PRODUCTS USED</h1>
                 <div className='ml-3 text-sm md:text-base'>
-                  <PrismicRichText field={data?.challenges} fallback={<div>Loading...</div>} />
+                  <PrismicRichText field={data?.product_used} fallback={<div>Loading...</div>} />
                 </div>
               </div>
             </div>
