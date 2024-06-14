@@ -155,7 +155,7 @@ const NavBar: React.FC = () => {
                 }
             </AnimatePresence>
             <a href='#hero' className={`${isScrolled?"scale-100":"scale-0"} fixed right-[3vmax] bottom-[3vmax] bg-white rounded-full p-2 md:p-3 lg:p-4 border-primary_blue border duration-500`}>
-                <div className=' size-[1.3vmax] border-l-4 border-b-4 border-primary_blue rotate-[135deg] translate-y-[0.3vmax]'></div>
+                <div className=' size-4 sm:size-6 lg:size-[1.3vmax] border-l-4 border-b-4 border-primary_blue rotate-[135deg] translate-y-1 lg:translate-y-[0.3vmax]'></div>
             </a>
         </section>
     )
