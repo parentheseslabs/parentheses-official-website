@@ -31,7 +31,7 @@ const Description = () => {
             <div className='lg:w-[50%] h-fit justify-center grid grid-cols-2 lg:pl-20 gap-8'>
                 {
                     data.map((item, idx) => (
-                        <div key={idx} className='rounded-xl shadow-allside px-9 py-5 text-sm space-y-4 text-black/70'>
+                        <div key={idx} className='rounded-xl shadow-allside px-7 py-5 text-sm space-y-4 text-black/70'>
                             <Image src={item.img} width={40} height={40} alt='service description' aria-label='This are small description images for each service we provide'></Image>
                             <p>{item.title}</p>
                         </div>

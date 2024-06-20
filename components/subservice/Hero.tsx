@@ -14,8 +14,8 @@ const Hero = () => {
             </div>
             <div className='lg:w-[60%] w-full flex justify-center items-center'>
                 <div className='bg-gray-100 p-24 sm:p-32  md:p-40 lg:p-48 w-fit rounded-full relative flex items-center'>
-                    <Image src={"/subservices/bigframe.png"} width={1000} height={1000} alt='subimage' aria-label='it is a picture depicting the service we are providing' className='absolute left-[50%] w-full rounded-lg'></Image>
-                    <Image src={"/subservices/squareframe.png"} width={200} height={200} alt='subimage' aria-label='it is a picture depicting the service we are providing' className='absolute left-10 z-10 rounded-lg w-[50%]'></Image>
+                    <Image src={"/subservices/bigframe.png"} width={1000} height={1000} alt='subimage' aria-label='it is a picture depicting the service we are providing' className='absolute left-[50%] w-full rounded-lg drop-shadow-2xl'></Image>
+                    <Image src={"/subservices/squareframe.png"} width={200} height={200} alt='subimage' aria-label='it is a picture depicting the service we are providing' className='absolute left-10 z-10 rounded-lg w-[50%] drop-shadow-lg'></Image>
                 </div>
             </div>
             <BgGridDark className='rotate-180 absolute -z-[1] top-0 scale-[5] sm:scale-[4]  xl:scale-[2] translate-y-12 md:translate-y-7 lg:-translate-y-10' />
