@@ -19,9 +19,9 @@ const ServiceCard = ({props,Color,images}:cardProp) => {
     
 
   return (
-    <div className={`${Color.backgroundColor=="blue"?"bg-primary_blue":"bg-card_dark_blue"} w-60 h-72 text-white px-5 py-4 rounded-lg relative overflow-hidden`}>
-        <h1 className='text-lg md:text-2xl font-sfpd-semibold'>{props.title}</h1>
-        <h1 className='text-sm sm:text-base '>{props.description}</h1>
+    <div className={`${Color.backgroundColor=="blue"?"bg-primary_blue":"bg-card_dark_blue"} w-60 h-72 text-white px-8 py-6 rounded-lg relative overflow-hidden space-y-3`}>
+        <h1 className='text-lg md:text-xl font-sfpd-semibold'>{props.title}</h1>
+        <h1 className='text-sm font-sfpd-light '>{props.description}</h1>
         <Image src={images.img} width={200} height={200} alt='' className='absolute -right-10 -bottom-10 opacity-35'></Image>
     </div>
   )
