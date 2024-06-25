@@ -45,7 +45,7 @@ const FAQ = () => {
                     faq.map((item, idx) => {
                         const i = { ...item, idx }
                         return (
-                            <div className={`${idx == selectedQuestion?"h-full":"h-[4.4rem]"}  shadow-allside bg-white rounded-xl px-5 md:px-8 py-6 md:w-[45rem] w-[20rem] space-y-8 overflow-hidden `}>
+                            <div key={idx} className={`${idx == selectedQuestion?"h-full":"h-[4.4rem]"}  shadow-allside bg-white rounded-xl px-5 md:px-8 py-6 md:w-[45rem] w-[20rem] space-y-8 overflow-hidden `}>
                                 <div
                                     onClick={() => handleClick(idx)}
                                     className='flex justify-between'>
