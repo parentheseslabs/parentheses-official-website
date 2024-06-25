@@ -36,11 +36,9 @@ const WorkFlow = () => {
         const interval = setInterval(() => {
             if (selectedService >= data.length) {
                 setSelectedServices(1)
-                console.log(selectedService)
             } else {
 
                 setSelectedServices(prev => prev + 1)
-                console.log(selectedService)
             }
         }, 5000)
 
