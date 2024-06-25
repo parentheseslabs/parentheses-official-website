@@ -159,7 +159,7 @@ const data = [
 
 const ServiceSearch = () => {
     return (
-        <section className='min-w-full min-h-[100svh] py-28 flex flex-col items-center gap-6 md:gap-12'>
+        <section className='min-w-full min-h-[100svh] py-28 flex flex-col items-center gap-5 md:gap-8'>
             <OneBlueWordHeading heading='Services For You' wordNum={1} />
             <h1 className='text-base md:text-2xl'>Tailored to your needs & requirements</h1>
             <input type="text" placeholder='Search what you are looking for' className=' w-[20rem] md:w-[30rem] lg:w-[40rem] py-4 px-5 border border-gray-300 rounded-full bg-gray-100 placeholder:text-center text-sm sm:text-base md:text-lg' />
@@ -178,8 +178,6 @@ const ServiceSearch = () => {
                     })
                 }
             </div>
-            <div className='w-[20rem] md:w-[30rem] lg:w-[40rem] border-t border-gray-200 translate-y-10'></div>
-            <Contact />
         </section>
     )
 }

@@ -1,5 +1,4 @@
 import React from 'react'
-import OneBlueWordHeading from '../OneBlueWordHeading'
 import Image from 'next/image'
 
 const data = [
@@ -24,7 +23,7 @@ const data = [
 const Description = () => {
     return (
         <section className='min-w-full min-h-svh flex lg:flex-row flex-col px-[10%] items-center'>
-            <div className=' lg:w-[60%] h-fit py-20 space-y-4'>
+            <div className=' lg:w-[60%] h-fit py-16 space-y-4'>
                 <h1 className='text-4xl md:text-5xl font-sfpd-bold'>Develop apps <span className='text-primary_blue'>tailored</span> to your vision</h1>
                 <p className='text-black/50'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae labore eveniet a praesentium libero nulla tempore vel quo dicta mollitia.</p>
             </div>
