@@ -76,6 +76,10 @@ const navElementMembers =[
         haveChildren: true,
         children: [
             {
+                subtitle: "All resources",
+                href: "/resources",
+            },
+            {
                 subtitle: "Community",
                 href: "/community",
             },
