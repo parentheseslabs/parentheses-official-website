@@ -33,7 +33,7 @@ const config: Config = {
         'xs': "375px"
       },
       boxShadow:{
-        'allsideLarge': '1px 1px 20px -4px rgba(0, 0, 0, 0.25)',
+        'allside': '1px 1px 20px -4px rgba(0, 0, 0, 0.25)',
         'allsideSmall': '1px 1px 12px -4px rgba(0, 0, 0, 0.25)',
       }
     },
