@@ -1,0 +1,69 @@
+{
+  "id": "sub_service",
+  "type": "SharedSlice",
+  "name": "SubService",
+  "description": "SubService",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "card_title": {
+          "type": "Text",
+          "config": {
+            "label": "Card Title",
+            "placeholder": ""
+          }
+        },
+        "card_description": {
+          "type": "Text",
+          "config": {
+            "label": "Card Description",
+            "placeholder": ""
+          }
+        },
+        "hero_title": {
+          "type": "Text",
+          "config": {
+            "label": "Hero Title",
+            "placeholder": ""
+          }
+        },
+        "hero_subtitle": {
+          "type": "Text",
+          "config": {
+            "label": "Hero Subtitle",
+            "placeholder": ""
+          }
+        },
+        "hero_big_image": {
+          "type": "Image",
+          "config": {
+            "label": "Hero Big Image",
+            "constraint": {
+              "width": 1000,
+              "height": 1000
+            },
+            "thumbnails": []
+          }
+        },
+        "hero_small_image": {
+          "type": "Image",
+          "config": {
+            "label": "Hero small Image",
+            "constraint": {
+              "width": 200,
+              "height": 200
+            },
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
