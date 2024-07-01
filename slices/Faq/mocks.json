@@ -10,24 +10,18 @@
 						"__TYPE__": "GroupItemContent",
 						"value": [
 							[
-								"question",
-								{
-									"__TYPE__": "StructuredTextContent",
-									"value": [
-										{
-											"type": "paragraph",
-											"content": {
-												"text": "Esse reprehenderit ut id duis officia Lorem quis esse enim dolor adipisicing aliqua."
-											}
-										}
-									]
-								}
-							],
-							[
 								"answer",
 								{
 									"__TYPE__": "FieldContent",
 									"value": "stronger",
+									"type": "Text"
+								}
+							],
+							[
+								"question",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "factor",
 									"type": "Text"
 								}
 							]

@@ -512,12 +512,12 @@ export interface FaqSliceDefaultPrimaryFaqItem {
   /**
    * Question field in *Faq → Default → Primary → Faq*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: faq.default.primary.faq[].question
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  question: prismic.RichTextField;
+  question: prismic.KeyTextField;
 
   /**
    * Answer field in *Faq → Default → Primary → Faq*
