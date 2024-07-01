@@ -12,7 +12,6 @@ const page = async ({ params }: { params: { uid: string } }) => {
   const client = createClient();
   const blogData = await client.getByUID("blog_post", params.uid)
   const data = blogData.data.slices[0]?.primary
-  // console.log('Data : ', blogData)
 
   return (
     <div id='hero' className='min-h-[100svh] min-w-full text-black space-y-16 pt-32 pb-20 flex flex-col items-center'>

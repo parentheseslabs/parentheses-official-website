@@ -130,7 +130,80 @@ export type BlogPostDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = BlogDocument | BlogPostDocument;
+type SubServicesDocumentDataSlicesSlice =
+  | FaqSlice
+  | StepsSlice
+  | FeatureSectionSlice
+  | HeroSectionSlice
+  | CardSlice;
+
+/**
+ * Content for sub_services documents
+ */
+interface SubServicesDocumentData {
+  /**
+   * Slice Zone field in *sub_services*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sub_services.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<SubServicesDocumentDataSlicesSlice> /**
+   * Meta Description field in *sub_services*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: sub_services.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *sub_services*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sub_services.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *sub_services*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: sub_services.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * sub_services document from Prismic
+ *
+ * - **API ID**: `sub_services`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SubServicesDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<SubServicesDocumentData>,
+    "sub_services",
+    Lang
+  >;
+
+export type AllDocumentTypes =
+  | BlogDocument
+  | BlogPostDocument
+  | SubServicesDocument;
 
 /**
  * Primary content in *Blog → Default → Primary*
@@ -370,6 +443,484 @@ export type BlogPostSlice = prismic.SharedSlice<
   BlogPostSliceVariation
 >;
 
+/**
+ * Primary content in *Card → Default → Primary*
+ */
+export interface CardSliceDefaultPrimary {
+  /**
+   * Title field in *Card → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Description field in *Card → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: card.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * href field in *Card → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Add the path(add "/" in the beginning) of the route of the service from the google sheet
+   * - **API ID Path**: card.default.primary.href
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  href: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Card Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CardSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CardSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Card*
+ */
+type CardSliceVariation = CardSliceDefault;
+
+/**
+ * Card Shared Slice
+ *
+ * - **API ID**: `card`
+ * - **Description**: Card
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CardSlice = prismic.SharedSlice<"card", CardSliceVariation>;
+
+/**
+ * Item in *Faq → Default → Primary → Faq*
+ */
+export interface FaqSliceDefaultPrimaryFaqItem {
+  /**
+   * Question field in *Faq → Default → Primary → Faq*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.default.primary.faq[].question
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  question: prismic.RichTextField;
+
+  /**
+   * Answer field in *Faq → Default → Primary → Faq*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.default.primary.faq[].answer
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  answer: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Faq → Default → Primary*
+ */
+export interface FaqSliceDefaultPrimary {
+  /**
+   * Faq field in *Faq → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.default.primary.faq[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  faq: prismic.GroupField<Simplify<FaqSliceDefaultPrimaryFaqItem>>;
+}
+
+/**
+ * Default variation for Faq Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FaqSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FaqSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Faq*
+ */
+type FaqSliceVariation = FaqSliceDefault;
+
+/**
+ * Faq Shared Slice
+ *
+ * - **API ID**: `faq`
+ * - **Description**: Faq
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FaqSlice = prismic.SharedSlice<"faq", FaqSliceVariation>;
+
+/**
+ * Item in *FeatureSection → Default → Primary → Feature Card*
+ */
+export interface FeatureSectionSliceDefaultPrimaryFeatureCardItem {
+  /**
+   * Title field in *FeatureSection → Default → Primary → Feature Card*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature_section.default.primary.feature_card[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Feature icon field in *FeatureSection → Default → Primary → Feature Card*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature_section.default.primary.feature_card[].feature_icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  feature_icon: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *FeatureSection → Default → Primary*
+ */
+export interface FeatureSectionSliceDefaultPrimary {
+  /**
+   * Heading field in *FeatureSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature_section.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Color word no field in *FeatureSection → Default → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature_section.default.primary.color_word_no
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  color_word_no: prismic.NumberField;
+
+  /**
+   * Sub Heading field in *FeatureSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature_section.default.primary.sub_heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  sub_heading: prismic.KeyTextField;
+
+  /**
+   * Feature Card field in *FeatureSection → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature_section.default.primary.feature_card[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  feature_card: prismic.GroupField<
+    Simplify<FeatureSectionSliceDefaultPrimaryFeatureCardItem>
+  >;
+}
+
+/**
+ * Default variation for FeatureSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeatureSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FeatureSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *FeatureSection*
+ */
+type FeatureSectionSliceVariation = FeatureSectionSliceDefault;
+
+/**
+ * FeatureSection Shared Slice
+ *
+ * - **API ID**: `feature_section`
+ * - **Description**: FeatureSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeatureSectionSlice = prismic.SharedSlice<
+  "feature_section",
+  FeatureSectionSliceVariation
+>;
+
+/**
+ * Primary content in *HeroSection → Default → Primary*
+ */
+export interface HeroSectionSliceDefaultPrimary {
+  /**
+   * Heading field in *HeroSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Sub Heading field in *HeroSection → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.sub_heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  sub_heading: prismic.KeyTextField;
+
+  /**
+   * Big Image field in *HeroSection → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.big_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  big_image: prismic.ImageField<never>;
+
+  /**
+   * Small Image field in *HeroSection → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.default.primary.small_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  small_image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for HeroSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeroSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *HeroSection*
+ */
+type HeroSectionSliceVariation = HeroSectionSliceDefault;
+
+/**
+ * HeroSection Shared Slice
+ *
+ * - **API ID**: `hero_section`
+ * - **Description**: HeroSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSectionSlice = prismic.SharedSlice<
+  "hero_section",
+  HeroSectionSliceVariation
+>;
+
+/**
+ * Item in *Steps → Default → Primary → Steps*
+ */
+export interface StepsSliceDefaultPrimaryStepsItem {
+  /**
+   * Title field in *Steps → Default → Primary → Steps*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: steps.default.primary.steps[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Sub Title field in *Steps → Default → Primary → Steps*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: steps.default.primary.steps[].sub_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  sub_title: prismic.KeyTextField;
+
+  /**
+   * Step Image field in *Steps → Default → Primary → Steps*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: steps.default.primary.steps[].step_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  step_image: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *Steps → Default → Primary*
+ */
+export interface StepsSliceDefaultPrimary {
+  /**
+   * Steps field in *Steps → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: steps.default.primary.steps[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  steps: prismic.GroupField<Simplify<StepsSliceDefaultPrimaryStepsItem>>;
+}
+
+/**
+ * Default variation for Steps Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type StepsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<StepsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Steps*
+ */
+type StepsSliceVariation = StepsSliceDefault;
+
+/**
+ * Steps Shared Slice
+ *
+ * - **API ID**: `steps`
+ * - **Description**: Steps
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type StepsSlice = prismic.SharedSlice<"steps", StepsSliceVariation>;
+
+/**
+ * Primary content in *SubService → Default → Primary*
+ */
+export interface SubServiceSliceDefaultPrimary {
+  /**
+   * Card Title field in *SubService → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sub_service.default.primary.card_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  card_title: prismic.KeyTextField;
+
+  /**
+   * Card Description field in *SubService → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sub_service.default.primary.card_description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  card_description: prismic.KeyTextField;
+
+  /**
+   * Hero Title field in *SubService → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sub_service.default.primary.hero_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  hero_title: prismic.KeyTextField;
+
+  /**
+   * Hero Subtitle field in *SubService → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sub_service.default.primary.hero_subtitle
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  hero_subtitle: prismic.KeyTextField;
+
+  /**
+   * Hero Big Image field in *SubService → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sub_service.default.primary.hero_big_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  hero_big_image: prismic.ImageField<never>;
+
+  /**
+   * Hero small Image field in *SubService → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sub_service.default.primary.hero_small_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  hero_small_image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for SubService Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SubServiceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SubServiceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *SubService*
+ */
+type SubServiceSliceVariation = SubServiceSliceDefault;
+
+/**
+ * SubService Shared Slice
+ *
+ * - **API ID**: `sub_service`
+ * - **Description**: SubService
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SubServiceSlice = prismic.SharedSlice<
+  "sub_service",
+  SubServiceSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -386,6 +937,9 @@ declare module "@prismicio/client" {
       BlogPostDocument,
       BlogPostDocumentData,
       BlogPostDocumentDataSlicesSlice,
+      SubServicesDocument,
+      SubServicesDocumentData,
+      SubServicesDocumentDataSlicesSlice,
       AllDocumentTypes,
       BlogSlice,
       BlogSliceDefaultPrimary,
@@ -395,6 +949,33 @@ declare module "@prismicio/client" {
       BlogPostSliceDefaultPrimary,
       BlogPostSliceVariation,
       BlogPostSliceDefault,
+      CardSlice,
+      CardSliceDefaultPrimary,
+      CardSliceVariation,
+      CardSliceDefault,
+      FaqSlice,
+      FaqSliceDefaultPrimaryFaqItem,
+      FaqSliceDefaultPrimary,
+      FaqSliceVariation,
+      FaqSliceDefault,
+      FeatureSectionSlice,
+      FeatureSectionSliceDefaultPrimaryFeatureCardItem,
+      FeatureSectionSliceDefaultPrimary,
+      FeatureSectionSliceVariation,
+      FeatureSectionSliceDefault,
+      HeroSectionSlice,
+      HeroSectionSliceDefaultPrimary,
+      HeroSectionSliceVariation,
+      HeroSectionSliceDefault,
+      StepsSlice,
+      StepsSliceDefaultPrimaryStepsItem,
+      StepsSliceDefaultPrimary,
+      StepsSliceVariation,
+      StepsSliceDefault,
+      SubServiceSlice,
+      SubServiceSliceDefaultPrimary,
+      SubServiceSliceVariation,
+      SubServiceSliceDefault,
     };
   }
 }

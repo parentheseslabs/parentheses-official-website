@@ -1,5 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
+import OneBlueWordHeading from '../OneBlueWordHeading'
+
 
 const data = [
     {
@@ -20,11 +22,24 @@ const data = [
     },
 ]
 
-const Description = () => {
+interface props {
+    heading: string,
+    sub_heading: string,
+    color_word_no: number,
+    feature_card: {
+        title: string,
+        feature_icon: {
+            url: string
+        }
+    }[]
+}
+
+const Description = ({heading,sub_heading,color_word_no,feature_card}:props) => {
     return (
         <section className='min-w-full min-h-svh flex lg:flex-row flex-col px-[10%] items-center'>
             <div className=' lg:w-[60%] h-fit py-16 space-y-4'>
-                <h1 className='text-4xl md:text-5xl font-sfpd-bold'>Develop apps <span className='text-primary_blue'>tailored</span> to your vision</h1>
+                <OneBlueWordHeading heading={heading} wordNum={color_word_no}/>
+                {/* < className='text-4xl md:text-5xl font-sfpd-bold'>{heading}</h1> */}
                 <p className='text-black/50'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae labore eveniet a praesentium libero nulla tempore vel quo dicta mollitia.</p>
             </div>
             <div className='lg:w-[50%] h-fit justify-center grid grid-cols-2 lg:pl-20 gap-8'>

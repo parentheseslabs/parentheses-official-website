@@ -25,6 +25,13 @@
             "label": "Description",
             "placeholder": ""
           }
+        },
+        "href": {
+          "type": "Text",
+          "config": {
+            "label": "href",
+            "placeholder": "Add the path(add \"/\" in the beginning) of the route of the service from the google sheet"
+          }
         }
       },
       "items": {}

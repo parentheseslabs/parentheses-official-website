@@ -12,6 +12,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "southern",
 				"type": "Text"
+			},
+			"href": {
+				"__TYPE__": "FieldContent",
+				"value": "former",
+				"type": "Text"
 			}
 		},
 		"items": []
