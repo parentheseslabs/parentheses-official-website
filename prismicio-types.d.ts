@@ -754,6 +754,16 @@ export type HeroSectionSlice = prismic.SharedSlice<
  */
 export interface StepsSliceDefaultPrimaryStepsItem {
   /**
+   * ids field in *Steps → Default → Primary → Steps*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: steps.default.primary.steps[].ids
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  ids: prismic.NumberField;
+
+  /**
    * Title field in *Steps → Default → Primary → Steps*
    *
    * - **Field Type**: Text

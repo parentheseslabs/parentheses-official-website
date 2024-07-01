@@ -18,6 +18,13 @@
             "label": "Steps",
             "repeat": true,
             "fields": {
+              "ids": {
+                "type": "Number",
+                "config": {
+                  "label": "ids",
+                  "placeholder": ""
+                }
+              },
               "title": {
                 "type": "Text",
                 "config": {

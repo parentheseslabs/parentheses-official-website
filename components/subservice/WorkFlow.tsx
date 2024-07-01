@@ -1,7 +1,7 @@
 "use client"
 import Image from 'next/image'
-import { removeAllListeners } from 'process'
 import React, { useEffect, useState } from 'react'
+import { createClient } from '@/prismicio'
 
 const data = [
     {
@@ -30,7 +30,18 @@ const data = [
     },
 ]
 
-const WorkFlow = () => {
+
+interface propStruct{
+    allProps:{
+        ids:number,
+        title:string,
+        sub_title:string,
+        step_image:string
+    }[]
+}
+
+const WorkFlow = ({allProps}:propStruct) => {
+
     const [selectedService, setSelectedServices] = useState(1)
     useEffect(() => {
         const interval = setInterval(() => {
@@ -53,12 +64,12 @@ const WorkFlow = () => {
             </div>
             <div className='w-full flex lg:flex-row flex-col-reverse justify-center items-center py-20 lg:gap-0 gap-16'>
                 <div className='lg:w-1/2 space-y-10'>
-                    {data.map((item, idx) => (
+                    {allProps.map((item, idx) => (
                         <div key={idx} className='flex gap-3 lg:pl-20'>
-                            <h1 className={`rounded-full border ${selectedService === item.id ? "border-primary_blue text-black" : "border-gray-400 text-black/50"} size-10 p-5 lg:size-10 flex justify-center items-center`}>{item.id}</h1>
+                            <h1 className={`rounded-full border ${selectedService === item.ids ? "border-primary_blue text-black" : "border-gray-400 text-black/50"} size-10 p-5 lg:size-10 flex justify-center items-center`}>{item.ids}</h1>
                             <div className='space-y-3'>
-                                <h2 className={`${selectedService === item.id ? "text-black" : "text-black/50"} font-sfpd-semibold`}>{item.title}</h2>
-                                <h1 className={`${selectedService===item.id?"text-black":"text-black/60"} text-sm`}>{item.description}</h1>
+                                <h2 className={`${selectedService === item.ids ? "text-black" : "text-black/50"} font-sfpd-semibold`}>{item.title}</h2>
+                                <h1 className={`${selectedService===item.ids?"text-black":"text-black/60"} text-sm`}>{item.sub_title}</h1>
                             </div>
                         </div>
                     ))}
