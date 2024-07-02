@@ -143,7 +143,7 @@ const NavBar: React.FC = () => {
                     </div>
                     <div
                         onClick={() => setisHamOpened(!isHamOpened)}
-                        className={` lg:hidden rounded-full relative size-11 flex flex-col gap-1 justify-center p-2 ${pathname !== '/about' && !isHamOpened && " bg-primary_blue "} ${pathname !== '/about' && isHamOpened && "bg-white"} ${isHamOpened && "items-center"} ${pathname === '/about' && "bg-white"} duration-300`}>
+                        className={` lg:hidden rounded-full relative size-11 flex flex-col gap-1 justify-center p-2 z-50 ${pathname !== '/about' && !isHamOpened && " bg-primary_blue "} ${pathname !== '/about' && isHamOpened && "bg-white"} ${isHamOpened && "items-center"} ${pathname === '/about' && "bg-white"} duration-300`}>
 
 
                         <div
