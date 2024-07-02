@@ -23,7 +23,7 @@ const Drawer = () => {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className='absolute z-[999999] top-0 right-0 lg:w-[50%] min-h-svh bg-white/20 border-l border-l-primary_blue backdrop-blur-lg flex items-center px-8 md:px-16 text-neutral-700'>
+            className='absolute z-[999999] top-0 right-0 lg:w-[60%] min-h-svh bg-white/20 border-l border-l-primary_blue backdrop-blur-lg flex items-center px-8 md:px-16 text-neutral-700'>
 
             <div className='w-full space-y-4'>
                 <h1 className='text-primary_blue'>Contact Us</h1>
@@ -32,8 +32,8 @@ const Drawer = () => {
                     <input type="text" placeholder='Your name' className='w-full bg-transparent outline-none focus:border-b-primary_blue border-b border-b-gray-500 py-3 px-4 italic' />
                     <div className='flex gap-4 flex-col md:flex-row'>
                         <div className='flex gap-4'>
-                            <select name="countryCode" id="" className='bg-transparent w-[50%] outline-none border-b border-b-gray-500 focus:border-b-primary_blue'>
-                                <option data-countryCode="IN" value="91" selected>India (+91)</option>
+                            <select name="countryCode" id="" className='bg-transparent w-[70%] outline-none border-b border-b-gray-500 focus:border-b-primary_blue'>
+                            <option data-countryCode="US" value="1" selected>USA (+1)</option>
                                 <optgroup label="Other countries">
                                     <option data-countryCode="DZ" value="213">Algeria (+213)</option>
                                     <option data-countryCode="AD" value="376">Andorra (+376)</option>
@@ -252,9 +252,9 @@ const Drawer = () => {
                                 </optgroup>
                             </select>
 
-                            <input type="tel" placeholder='Ph no.' pattern='[0-9]{5}-[0-9]{5}' className='w-full bg-transparent outline-none focus:border-b-primary_blue border-b border-b-gray-500 py-3 px-4 italic ' />
+                            <input type="tel" placeholder='Ph no.' pattern='[0-9]{5}-[0-9]{5}' className='w-[100%] bg-transparent outline-none focus:border-b-primary_blue border-b border-b-gray-500 py-3 px-4 italic ' />
                         </div>
-                        <input type="text" placeholder='Your email' className='w-full bg-transparent outline-none focus:border-b-primary_blue border-b border-b-gray-500 py-3 px-4 italic' />
+                        <input type="text" placeholder='Your email' className='w-[50%] bg-transparent outline-none focus:border-b-primary_blue border-b border-b-gray-500 py-3 px-4 italic' />
                     </div>
                     <div>
                         <h1 className='text-xl font-sfpd-semibold'>What&apos;s on your mind?</h1>
