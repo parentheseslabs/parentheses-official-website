@@ -254,7 +254,7 @@ const Drawer = () => {
                             </optgroup>
                         </select>
 
-                        <input type="tel" placeholder='Ph no.' className='w-[100%] bg-transparent outline-none focus:border-b-primary_blue border-b border-b-gray-500 py-3 px-4 italic  placeholder:text-neutral-600' />
+                        <input type="tel" placeholder='Your Phone No.' className='w-[100%] bg-transparent outline-none focus:border-b-primary_blue border-b border-b-gray-500 py-3 px-4 italic  placeholder:text-neutral-600' />
                     </div>
                     <div>
                         <h1 className='text-xl font-sfpd-semibold'>What&apos;s on your mind?</h1>
