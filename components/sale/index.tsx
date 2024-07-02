@@ -7,7 +7,7 @@ interface props {
 
 const Sale = ({ ...props }: props) => {
     return (
-        <div className={`${" "+props.className+" "} ${props.bg === 'white' ? " bg-white" : " bg-primary_blue text-white"} w-full  text-sm font-sfpd-regular flex gap-4 items-center justify-center py-2 absolute z-[10000] text-black`}>
+        <div className={`${" "+props.className+" "} ${props.bg === 'white' ? " bg-white" : " bg-primary_blue text-white"} w-full  text-sm font-sfpd-regular flex gap-4 items-center justify-center py-2 absolute z-[100] text-black`}>
             <h1>
                 Limited Time Offer: May Sale
             </h1>

@@ -4,9 +4,12 @@ import ParenthesesLogo from '@/public/logo/ParenthesesLogo.svg'
 import React, { useState, useEffect } from 'react'
 import DropDownArrow from '@/public/svgs/dropdownArrow.svg'
 import Link from 'next/link'
+import { useDrawer } from '@/lib/store'
+
 
 const SecondaryButton = dynamic(() => import('../buttons/SecondaryButton'))
 const MobileNav = dynamic(() => import('@/components/navbar/MobileNav'));
+import Drawer from './Drawer'
 
 import MobileLogo from '@/public/logo/moblieLogo.svg'
 import { AnimatePresence } from 'framer-motion'
@@ -15,19 +18,15 @@ import MobileDarkLogo from '@/public/logo/mobileDarkLogo.svg'
 import navElementMembers from '@/public/navlinks/data'
 
 
+
+
 const NavBar: React.FC = () => {
     const [isNavOpened, setIsnavOpened] = useState(1000);
     const [isHamOpened, setisHamOpened] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+
     const pathname = usePathname();
     const [urlpath, setUrlPath] = useState("/")
-    useEffect(() => {
-        if (isHamOpened) {
-            document.body.style.overflow = 'hidden'
-        } else {
-            document.body.style.overflow = 'auto'
-        }
-    }, [isHamOpened])
     useEffect(() => {
         if (urlpath !== pathname) {
             setIsnavOpened(1000);
@@ -35,6 +34,15 @@ const NavBar: React.FC = () => {
         }
         setUrlPath(pathname);
     }, [pathname])
+
+
+    useEffect(() => {
+        if (isHamOpened) {
+            document.body.style.overflow = 'hidden'
+        } else {
+            document.body.style.overflow = 'auto'
+        }
+    }, [isHamOpened])
 
     const handleClick = (idx: number) => {
         if (idx !== isNavOpened) {
@@ -57,10 +65,18 @@ const NavBar: React.FC = () => {
         }
         window.addEventListener('scroll', handleScroll)
     }, [])
-
+    const isDrawerOpened = useDrawer(state => state.open)
+    const toggleDrawer = useDrawer(state => state.toggleDrawer)
     return (
-        <section id='nav' className={`fixed ${isScrolled ? "pt-2" : "pt-14"} w-full justify-center px-[3.5%] z-[100] duration-500`}>
-            <div className={`${pathname === '/about' ? "lg:bg-white" : "lg:bg-white/50"} lg:backdrop-blur-lg h-fit w-full flex rounded-full lg:border-[1.5px] border-primary_blue gap justify-between px-5 items-center relative z-50`}>
+        <section id='nav' className={`fixed ${isScrolled ? "pt-2" : "pt-14"} w-full justify-center px-[3.5%] z-[200] duration-500`}>
+
+            <AnimatePresence>
+                {
+                    isDrawerOpened &&
+                    <Drawer />
+                }
+            </AnimatePresence>
+            <div className={`${pathname === '/about' ? "lg:bg-white" : "lg:bg-white/50"} lg:backdrop-blur-lg h-fit w-full flex rounded-full lg:border-[1.5px] border-primary_blue gap justify-between px-5 items-center relative`}>
                 <Link href={'/'} aria-label='Go to home page'>
                     <ParenthesesLogo className='hidden lg:flex relative z-50' />
                     {
@@ -122,9 +138,9 @@ const NavBar: React.FC = () => {
 
                 {/* Hamburger button*/}
                 <div className='flex gap-4 items-center'>
-                    <a href="/contactus">
+                    <div onClick={toggleDrawer}>
                         <SecondaryButton title='LET&apos;S TALK' />
-                    </a>
+                    </div>
                     <div
                         onClick={() => setisHamOpened(!isHamOpened)}
                         className={` lg:hidden rounded-full relative size-11 flex flex-col gap-1 justify-center p-2 ${pathname !== '/about' && !isHamOpened && " bg-primary_blue "} ${pathname !== '/about' && isHamOpened && "bg-white"} ${isHamOpened && "items-center"} ${pathname === '/about' && "bg-white"} duration-300`}>
@@ -154,9 +170,10 @@ const NavBar: React.FC = () => {
                     <MobileNav isOpened={isHamOpened} />
                 }
             </AnimatePresence>
-            <a href='#hero' className={`${isScrolled?"scale-100":"scale-0"} fixed right-[3vmax] bottom-[3vmax] bg-white rounded-full p-2 md:p-3 lg:p-4 border-primary_blue border duration-500`}>
+            <a href='#hero' className={`${isScrolled ? "scale-100" : "scale-0"} fixed right-[3vmax] bottom-[3vmax] bg-white rounded-full p-2 md:p-3 lg:p-4 border-primary_blue border duration-500`}>
                 <div className=' size-4 sm:size-6 lg:size-[1.3vmax] border-l-4 border-b-4 border-primary_blue rotate-[135deg] translate-y-1 lg:translate-y-[0.3vmax]'></div>
             </a>
+
         </section>
     )
 }
