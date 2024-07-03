@@ -6,42 +6,44 @@ const data = [
     {
         title: "Development Tools",
         desc: "Creating an app for your business can get your product in front of new audiences.",
+        href:"/resources/development-tools",
         tools: [
             {
-                cardTitle: "Ruby",
-                cardDesc: "Creating app for you.",
-                img: "/raster/ruby.png"
+                cardTitle: "Hasura",
+                cardDesc: "One stop solution for all your GraphQL needs",
+                img: "/raster/hasura.svg"
             },
             {
-                cardTitle: "Ruby",
-                cardDesc: "Creating app for you.",
-                img: "/raster/ruby.png"
+                cardTitle: "NextJS",
+                cardDesc: "Create blazing-fast fullstack robust production ready web-apps with ease.",
+                img: "/raster/nextjs.svg"
             },
             {
-                cardTitle: "Ruby",
-                cardDesc: "Creating app for you.",
-                img: "/raster/ruby.png"
+                cardTitle: "React Native",
+                cardDesc: "Create app once run on any platform.",
+                img: "/raster/reactnative.svg"
             },
         ]
     },
     {
-        title: "Development Tools",
+        title: "Creative Tools",
         desc: "Creating an app for your business can get your product in front of new audiences.",
+        href:"/resources/creative tools",
         tools: [
             {
-                cardTitle: "Ruby",
-                cardDesc: "Creating app for you.",
-                img: "/raster/ruby.png"
+                cardTitle: "Figma",
+                cardDesc: "User centric UX/UI for your application",
+                img: "/raster/figma.png"
             },
             {
-                cardTitle: "Ruby",
-                cardDesc: "Creating app for you.",
-                img: "/raster/ruby.png"
+                cardTitle: "Canva",
+                cardDesc: "Beautiful poster and content for your brand",
+                img: "/raster/canva.png"
             },
             {
-                cardTitle: "Ruby",
-                cardDesc: "Creating app for you.",
-                img: "/raster/ruby.png"
+                cardTitle: "Spline",
+                cardDesc: " Design and add stunning 3D models directly into your react code",
+                img: "/raster/spline.png"
             },
         ]
     },
@@ -51,6 +53,7 @@ const data = [
 interface descProps {
     title: string;
     desc: string;
+    href:string
     tools: {
         cardTitle: string;
         cardDesc: string;
@@ -90,9 +93,10 @@ const Tools = () => {
 const Description = ({ ...props }: descProps) => {
     return (
         <div className='flex py-20 items-center lg:flex-row lg:even:flex-row-reverse  flex-col gap-12 lg:gap-0 justify-between'>
-            <div className='ml-10'>
+            <div className='ml-10 space-y-2'>
                 <h1 className='text-xl font-sfpd-semibold'>{props.title}</h1>
                 <h1 className='text-black/60 sm:w-[70%] text-lg'>{props.desc}</h1>
+                <a href={props.href} className='text-primary_blue'>Read More</a>
             </div>
             <div className='lg:w-[70%] xl:w-[60%]'>
                 <div className='grid grid-cols-2 gap-4 items-center'>
