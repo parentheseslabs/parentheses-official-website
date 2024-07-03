@@ -27,10 +27,6 @@ const navElementMembers =[
                 subtitle: "Press",
                 href: "/about/in-the-press"
             },
-            {
-                subtitle: 'Partners',
-                href: '/about/partners',
-            },
         ]
     },
     {

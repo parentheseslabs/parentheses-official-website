@@ -1,4 +1,4 @@
-"Use client"
+"use client"
 import React, { useState } from 'react';
 import PrimaryButton from '../buttons/PrimaryButton';
 import Logo from '@/public/logo/moblieLogo.svg'
