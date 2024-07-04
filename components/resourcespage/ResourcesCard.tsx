@@ -18,7 +18,7 @@ const ResourcesCard = ({ title, options }: cardProps) => {
                 <div className='flex flex-col text-primary_blue gap-4'>
                     {
                         options.map((item, idx) => (
-                            <a href='' key={idx} className='flex justify-between items-center group rounded-lg py-1'>
+                            <a href={item.href} key={idx} className='flex justify-between items-center group rounded-lg py-1'>
                                 <h1>{item.title}</h1>
                                 <Arrow className='stroke-primary_blue rotate-90 group-hover:translate-x-2 duration-300'/>
                             </a>
