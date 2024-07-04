@@ -8,90 +8,78 @@ const resources = [
         options: [
             {
                 title: "YC Safe",
-                href: "/"
+                href: "https://www.ycombinator.com/documents/"
             },
             {
                 title: "Series Seed",
-                href: "/"
+                href: "https://www.seriesseed.com/"
+            },
+            {
+                title: "Term Sheet Grader",
+                href: "https://www.pillar.vc/founder-support/term-sheet-grader/"
             },
            
         ]
     },
     {
-        title: "RAISING CAPITAL",
+        title: "LEGAL",
         options: [
             {
-                title: "YC Safe",
-                href: "/"
+                title: "Carta",
+                href: "http://www.carta.com/"
             },
             {
-                title: "Series Seed",
-                href: "/"
+                title: "Clerky",
+                href: "https://www.clerky.com/"
             },
             {
-                title: "Tearm Sheet Grader",
-                href: "/"
+                title: "Avodocs",
+                href: "https://www.avodocs.com/#documents"
             },
         ]
     },
     {
-        title: "RAISING CAPITAL",
+        title: "FINANCE",
         options: [
             {
-                title: "YC Safe",
-                href: "/"
+                title: "Shasta SaaS Operating Model",
+                href: "https://medium.com/@kenndanielso/shasta-saas-operating-model-7974d49a0c92"
             },
            
         ]
     },
     {
-        title: "RAISING CAPITAL",
+        title: "HR",
         options: [
             {
-                title: "YC Safe",
-                href: "/"
+                title: "Work Rules",
+                href: "https://www.workrules.net/"
             },
             {
-                title: "Series Seed",
-                href: "/"
+                title: "OKR",
+                href: "https://www.whatmatters.com/"
             },
             {
-                title: "Tearm Sheet Grader",
-                href: "/"
+                title: "FlexJobs | Remote.co",
+                href: "https://www.flexjobs.com/"
             },
         ]
     },
     {
-        title: "RAISING CAPITAL",
+        title: "M&A",
         options: [
             {
-                title: "YC Safe",
-                href: "/"
-            },
-            {
-                title: "Series Seed",
-                href: "/"
-            },
-            {
-                title: "Tearm Sheet Grader",
-                href: "/"
+                title: "Atlassian Open Term Sheet",
+                href: "https://www.atlassian.com/blog/technology/atlassian-term-sheet"
             },
         ]
     },
     {
-        title: "RAISING CAPITAL",
+        title: "BOOKS",
         options: [
             {
-                title: "YC Safe",
-                href: "/"
-            },
-            {
-                title: "Series Seed",
-                href: "/"
-            },
-            {
-                title: "Tearm Sheet Grader",
-                href: "/"
+                title: "Start Up J-Curve",
+                href: "http://www.howardlove.com/startup-jcurve/"
             },
         ]
     },
