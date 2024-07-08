@@ -10,7 +10,7 @@ const HomeHero = () => {
                 <div className='flex flex-col gap-8 w-full items-center'>
                     <div className='flex text-[4vmax] md:text-[4.5vmax] flex-col  justify-center items-center'>
                         <h1 className=" font-sfpd-bold ">Empowering Solutions</h1>
-                        <h1 className=' font-sfpd-bold'>for the<span className='text-primary_blue'>Digital Age</span></h1>
+                        <h1 className=' font-sfpd-bold'>for the <span className='text-primary_blue'>Digital Age</span></h1>
                     </div>
                     <h2 className='lg:w-fit w-[90%] text-sm md:text-xl tracking-wider font-sfpd-light text-black/60'>Faster post-production. Shorter review cycles. Better collaboration. We take your work to the next level.</h2>
                 </div>

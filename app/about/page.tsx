@@ -9,7 +9,6 @@ import OurApproach from "@/components/aboutpage/OurApproach";
 import WhyUs from "@/components/aboutpage/WhyUs";
 import NoteWorthyAchievements from "@/components/aboutpage/NoteWorthyAchievements";
 import { Suspense } from "react";
-import Contact from "@/components/aboutpage/Contact";
 
 const About = () => {
   return (
@@ -25,7 +24,6 @@ const About = () => {
       <OurApproach />
       <WhyUs />
       <NoteWorthyAchievements />
-      <Contact/>
     </div>
   )
 }

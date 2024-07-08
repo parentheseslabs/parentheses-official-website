@@ -30,7 +30,7 @@ const awards = [
 
 const NoteWorthyAchievements = () => {
     return (
-        <section className='w-full min-h-screen flex overflow-hidden'>
+        <section className='w-full min-h-screen flex overflow-hidden pb-40'>
             <div className='bg-primary_blue w-full flex justify-center items-center relative text-white flex-col gap-14 lg:gap-20 py-28 px-20 text-center'>
                 <Image src={'/background/cardGrid.png'} width={200} height={200} alt='grid' className='w-[75%] lg:w-[60%] absolute -z-0 top-20 lg:top-[50%] lg:-translate-y-[50%] flex opacity-50'></Image>
                 <BlockImageDark className='absolute -left-10 -top-10 lg:-left-20 lg:-top-40 w-[15vmax] md:w-[30vmax] lg:w-[35vmax] z-0 rotate-180 opacity-80' />
