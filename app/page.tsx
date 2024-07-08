@@ -2,6 +2,7 @@ import HomeHero from "@/components/homepage/HomeHero";
 import Review from "@/components/homepage/Review";
 import Sale from "@/components/sale";
 import Steps from "@/components/homepage/Steps";
+import TechStack from "@/components/homepage/TechStack";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <HomeHero/>
       <Review/>
       <Steps/>
+      <TechStack/>
     </main>
   );
 }
