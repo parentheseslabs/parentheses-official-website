@@ -69,6 +69,20 @@ const Steps = () => {
                     height={1200}
                 />
             </div>
+            <div className='relative z-10 drop-shadow-xl h-[30rem] lg:w-[90rem] xl:w-[960px] overflow-hidden xl:pr-20 2xl:w-[50rem] items-center flex md:hidden'>
+                <Lottie options={{
+                    loop: true,
+                    autoplay: true,
+                    animationData: RingAnimation,
+                    rendererSettings: {
+                        preserveAspectRatio: "xMidYMid slice"
+                    }
+                }}
+                    speed={0.35}
+                    width={400}
+                    height={800}
+                />
+            </div>
             <Image src={'/background/cardGrid.png'} width={700} height={700} alt='background grid' className='absolute right-10 -z-0 opacity-20 w-[60rem]'></Image>
             <BlockImage className='absolute -left-[9%] w-[30%] -top-28' />
         </section>
