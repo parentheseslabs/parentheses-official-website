@@ -54,7 +54,7 @@ export const Card = ({ ...props }: { title: string,img:string, benefits: string[
             <div className='w-fit space-y-4'>
                 {
                     props.benefits.map((item, idx) => (
-                        <div key={idx} className='flex gap-4 max-w-[24rem]'>
+                        <div key={idx} className='flex gap-4 max-w-[24rem] items-center'>
                             <BlueTick className='w-[2.8rem]'/>
                             <h1 className='max-w-[18rem]'>{item}</h1>
                         </div>

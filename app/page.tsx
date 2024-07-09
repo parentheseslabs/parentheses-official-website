@@ -4,7 +4,31 @@ import Sale from "@/components/sale";
 import Steps from "@/components/homepage/Steps";
 import TechStack from "@/components/homepage/TechStack";
 import EngagementModel from "@/components/homepage/EngagementModel";
+import FAQ from "@/components/subservice/FAQ";
+import NewsLetter from "@/components/homepage/NewsLetter";
 
+const faq = [
+  {
+      question: "What is your name?",
+      answer: "Bhupendra Yogi"
+  },
+  {
+      question: "What is your name?",
+      answer: "Bhupendra Yogi"
+  },
+  {
+      question: "What is your name?",
+      answer: "Bhupendra Yogi"
+  },
+  {
+      question: "What is your name?",
+      answer: "Bhupendra Yogi"
+  },
+  {
+      question: "What is your name?",
+      answer: "Bhupendra Yogi"
+  },
+]
 export default function Home() {
   return (
     <main className=" bg-white font-sfpd-regular min-h-screen">
@@ -14,6 +38,8 @@ export default function Home() {
       <Steps/>
       <TechStack/>
       <EngagementModel/>
+      <NewsLetter/>
+      <FAQ allProp={faq}/>
     </main>
   );
 }
