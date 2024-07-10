@@ -36,7 +36,7 @@ const CaseStudiesCarousel = () => {
 
 
   return (
-    <section className=' min-h-svh space-y-4 m'>
+    <section className=' min-h-svh space-y-4 m py-16'>
       <h1 className='text-center text-primary_blue font-sfpd-semibold text-base md:text-lg'>CASE STUDIES</h1>
       <Swiper
         effect={'coverflow'}

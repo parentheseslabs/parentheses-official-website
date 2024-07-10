@@ -6,6 +6,8 @@ import TechStack from "@/components/homepage/TechStack";
 import EngagementModel from "@/components/homepage/EngagementModel";
 import FAQ from "@/components/subservice/FAQ";
 import NewsLetter from "@/components/homepage/NewsLetter";
+import CaseStudiesCarousel from "@/components/subservice/CaseStudiesCarousel";
+import BlogSection from "@/components/homepage/BlogSection";
 
 const faq = [
   {
@@ -38,6 +40,8 @@ export default function Home() {
       <Steps/>
       <TechStack/>
       <EngagementModel/>
+      <CaseStudiesCarousel/>
+      <BlogSection/>
       <NewsLetter/>
       <FAQ allProp={faq}/>
     </main>
