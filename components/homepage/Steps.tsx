@@ -34,7 +34,6 @@ const Steps = () => {
             } else {
 
                 setSelectedServices(prev => prev + 1)
-                console.log(selectedService);
 
             }
         }, 3000)
