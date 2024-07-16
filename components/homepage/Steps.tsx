@@ -3,7 +3,7 @@ import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import BlockImage from '@/public/svgs/blockImageDark.svg'
 import Lottie from 'react-lottie'
-import RingAnimation from '@/public/Aimations/Ring Animation.json'
+import RingAnimation from '@/public/animations/Ring Animation.json';
 
 const data = [
     {
