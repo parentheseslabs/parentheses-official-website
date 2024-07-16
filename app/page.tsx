@@ -8,6 +8,7 @@ import FAQ from "@/components/subservice/FAQ";
 import NewsLetter from "@/components/homepage/NewsLetter";
 import CaseStudiesCarousel from "@/components/subservice/CaseStudiesCarousel";
 import BlogSection from "@/components/homepage/BlogSection";
+import FeaturedServices from "@/components/homepage/FeaturedServices";
 
 const faq = [
   {
@@ -38,6 +39,7 @@ export default function Home() {
       <HomeHero/>
       <Review/>
       <Steps/>
+      <FeaturedServices/>
       <TechStack/>
       <EngagementModel/>
       <CaseStudiesCarousel/>
