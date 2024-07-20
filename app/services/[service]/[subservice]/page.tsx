@@ -16,10 +16,10 @@ const page = async ({ params }: { params: { subservice: string } }) => {
                 ? { next: { tags: ["prismic"] }, cache: "force-cache" }
                 : { next: { revalidate: 5 } },
     });
-    let data ;
+    let data;
     try {
         data = await client.getByUID("sub_services", params.subservice)
-        console.log(data);
+        // console.log(data);
     } catch (error) {
         redirect("/services")
     }
@@ -43,11 +43,25 @@ const page = async ({ params }: { params: { subservice: string } }) => {
 
     return (
         <main>
-            <Hero heading={hero.heading} subheading={hero.sub_heading} bigImage={hero.big_image.url} smallImage={hero.small_image.url} />
-            <Description heading={features.heading} sub_heading={features.sub_heading} color_word_no={features.color_word_no} feature_card={features.feature_card} />
-            <WorkFlow allProps={workFlow.steps} />
+            {
+                hero &&
+                <Hero heading={hero.heading} subheading={hero.sub_heading} bigImage={hero.big_image.url} smallImage={hero.small_image.url} />
+            }
+            {
+                features &&
+                <Description heading={features.heading} sub_heading={features.sub_heading} color_word_no={features.color_word_no} feature_card={features.feature_card} />
+            }
+            {
+                workFlow &&
+                <WorkFlow allProps={workFlow.steps} />
+            }
             <CaseStudiesCarousel />
-            <FAQ allProp={Faq.faq} />
+            {
+                Faq  && (
+
+                    <FAQ allProp={Faq.faq} />
+                )
+            }
         </main>
     )
 }

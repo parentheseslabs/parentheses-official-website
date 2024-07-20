@@ -29,18 +29,32 @@ const page = async ({ params }: { params: { service: string } }) => {
         }[]
     }
 
-    const workFlow = data.data.slices[3]?.primary as { steps: { ids: number, title: string, sub_title: string, step_image: {url:string} }[] };
+    const workFlow = data.data.slices[3]?.primary as { steps: { ids: number, title: string, sub_title: string, step_image: { url: string } }[] };
     const Faq = data.data.slices[4]?.primary as { faq: { question: string, answer: string }[] }
-    // console.log(data);
+    // console.log(Faq);
 
 
     return (
         <main>
-            <Hero heading={hero.heading} subheading={hero.sub_heading} bigImage={hero.big_image.url} smallImage={hero.small_image.url} />
-            <Description heading={features.heading} sub_heading={features.sub_heading} color_word_no={features.color_word_no} feature_card={features.feature_card} />
-            <WorkFlow allProps={workFlow.steps} />
+            {
+                hero &&
+                <Hero heading={hero.heading} subheading={hero.sub_heading} bigImage={hero.big_image.url} smallImage={hero.small_image.url} />
+            }
+            {
+                features &&
+                <Description heading={features.heading} sub_heading={features.sub_heading} color_word_no={features.color_word_no} feature_card={features.feature_card} />
+            }
+            {
+                workFlow &&
+                <WorkFlow allProps={workFlow.steps} />
+            }
             <CaseStudiesCarousel />
-            <FAQ allProp={Faq.faq} />
+            {
+                Faq&& (
+
+                    <FAQ allProp={Faq.faq} />
+                )
+            }
         </main>
     )
 }
