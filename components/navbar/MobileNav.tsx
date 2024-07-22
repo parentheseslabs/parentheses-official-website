@@ -38,9 +38,13 @@ const MobileNav = ({ isOpened = false }: { isOpened: boolean }) => {
             <div
               onClick={() => handleClick(idx)}
               className='flex justify-between items-center'>
-              <h1>
-                {elem.title}
-              </h1>
+              {
+                !elem.haveChildren ? <Link href={elem.href || ""}>{elem.title}</Link>
+                  :
+                  <h1>
+                    {elem.title}
+                  </h1>
+              }
               {elem.haveChildren && <DropDownArrow className='stroke-2 stroke-white' />}
             </div>
             {

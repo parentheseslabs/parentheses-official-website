@@ -13,6 +13,7 @@
     "@prismicio/client": "^7.5.0",
     "@prismicio/next": "^1.6.0",
     "@prismicio/react": "^2.8.0",
+    "axios": "^1.7.2",
     "framer-motion": "^11.2.6",
     "next": "14.2.3",
     "react": "^18",

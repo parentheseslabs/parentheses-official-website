@@ -1,6 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import PartnerCard from './PartnerCard'
+import axios from 'axios';
 
 
 const filters = [
@@ -46,50 +47,52 @@ const filters = [
     },
 ]
 
-const data = [
-    {
-        name: "Sourav Das",
-        img: "",
-        designation: "Core member",
-        tags: ["articles"],
-        email: "sd@gmail.com"
-    },
-    {
-        name: "Sourav Das",
-        img: "",
-        designation: "",
-        tags: ["articles"],
-        email: "sd@gmail.com"
-    },
-    {
-        name: "Sourav Das",
-        img: "",
-        designation: "",
-        tags: ["articles"],
-        email: "sd@gmail.com"
-    },
-    {
-        name: "Sourav Das",
-        img: "",
-        designation: "",
-        tags: ["articles"],
-        email: "sd@gmail.com"
-    },
-    {
-        name: "Sourav Das",
-        img: "",
-        designation: "",
-        tags: ["articles"],
-        email: "sd@gmail.com"
-    },
-    {
-        name: "Sourav Das",
-        img: "",
-        designation: "",
-        tags: ["articles"],
-        email: "sd@gmail.com"
-    },
-]
+// const data = [
+//     {
+//         name: "Sourav Das",
+//         img: "",
+//         designation: "Core member",
+//         tags: ["articles"],
+//         email: "sd@gmail.com"
+//     },
+//     {
+//         name: "Sourav Das",
+//         img: "",
+//         designation: "",
+//         tags: ["articles"],
+//         email: "sd@gmail.com"
+//     },
+//     {
+//         name: "Sourav Das",
+//         img: "",
+//         designation: "",
+//         tags: ["articles"],
+//         email: "sd@gmail.com"
+//     },
+//     {
+//         name: "Sourav Das",
+//         img: "",
+//         designation: "",
+//         tags: ["articles"],
+//         email: "sd@gmail.com"
+//     },
+//     {
+//         name: "Sourav Das",
+//         img: "",
+//         designation: "",
+//         tags: ["articles"],
+//         email: "sd@gmail.com"
+//     },
+//     {
+//         name: "Sourav Das",
+//         img: "",
+//         designation: "",
+//         tags: ["articles"],
+//         email: "sd@gmail.com"
+//     },
+// ]
+
+// interface fetchData {values:string[][]}
 
 interface filteredArrayType {
     name: string;
@@ -104,6 +107,7 @@ const AllPartners = () => {
     const [industrySet, setIndusrtySet] = useState<any[]>([])
     const [partnerSet, setPartnerSet] = useState<any[]>([])
     const [filteredArray, setFilteredArray] = useState<any[]>([])
+    const [data,setData]=useState<string[][]>()
     const handleChange = (name: string, val: boolean, type: string) => {
         if (val) {
             if (type === "industry" && !industrySet.includes(name)) {
@@ -152,20 +156,35 @@ const AllPartners = () => {
     const clearAll = () => {
         setFilterSet([""]);
     }
-
     useEffect(() => {
-        const empty = [""]
-        if (filterSet === empty || filterSet===null) {
-            setFilteredArray(data)
-        } else {
-            let newArray = [{}]
-            filterSet.forEach(element => {
-                newArray = data.filter(item=>{if(!newArray.includes(item)) return item.tags.includes(element)});
+        const key = process.env.NEXT_PUBLIC_API_KEY;
+        async function getServerSideProps() {
+            const url = `https://sheets.googleapis.com/v4/spreadsheets/1M8iUZOv8cpvEAKAbk2AC5V-5BDiLwkQibuhYZYX7WWg/values/Core%20Team?key=${key}`;
+          
+            let fetchData = [];
+          
+            try {
+              const response = await axios.get(url);
+              fetchData = response.data.values;
+              setData(fetchData);
+              console.log(data); 
+            } catch (error) {
+              console.error('Error fetching data from Google Sheets:', error);
+            }
+          }
+        // const empty = [""]
+        // if (filterSet === empty || filterSet===null) {
+        //     setFilteredArray(data)
+        // } else {
+        //     let newArray = [{}]
+        //     filterSet.forEach(element => {
+        //         newArray = data.filter(item=>{if(!newArray.includes(item)) return item.tags.includes(element)});
                 
-            });
-            setFilteredArray(newArray)
-        }
-        console.log(filteredArray);
+        //     });
+        //     setFilteredArray(newArray)
+        // }
+        // console.log(filteredArray);
+        getServerSideProps();
 
     }, [filterSet || setFilterSet])
     return (
@@ -199,9 +218,9 @@ const AllPartners = () => {
                 }
                 <button className='rounded-full bg-primary_blue text-white md:w-full py-3 active:scale-95 duration-200 hover:bg-blue-700'>Apply</button>
             </div>
-            <div>
+            <div className='flex flex-wrap gap-8 justify-center w-fit'>
                 {
-                    filteredArray.map((item,idx)=>(
+                   data && data?.map((item,idx)=>(
                         <PartnerCard key={idx} {...item}/>
                     ))
                 }

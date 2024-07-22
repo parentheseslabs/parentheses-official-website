@@ -19,9 +19,9 @@ const page = async ({ params }: { params: { subservice: string } }) => {
     let data;
     try {
         data = await client.getByUID("sub_services", params.subservice)
-        // console.log(data);
+
     } catch (error) {
-        // console.log(error);
+
         redirect("/services")
     }
     const hero = data.data.slices[1]?.primary as { heading: string, sub_heading: string, big_image: { url: string }, small_image: { url: string } }
@@ -39,7 +39,7 @@ const page = async ({ params }: { params: { subservice: string } }) => {
 
     const workFlow = data.data.slices[3]?.primary as { steps: { ids: number, title: string, sub_title: string, step_image: { url: string } }[] };
     const Faq = data.data.slices[4]?.primary as { faq: { question: string, answer: string }[] }
-    // console.log(data);
+
 
 
     return (
