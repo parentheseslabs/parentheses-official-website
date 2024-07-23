@@ -2,6 +2,7 @@ import React from 'react'
 import BlockImage from '@/public/svgs/blockImageDark.svg';
 import Headhunting from '@/public/svgs/headhunting.svg'
 import SecondaryButton from '../buttons/SecondaryButton';
+import Link from 'next/link';
 
 const HeadHunting = () => {
     return (
@@ -11,8 +12,10 @@ const HeadHunting = () => {
                     <h1 className='text-white/70 text-xl'>Resources</h1>
                     <h1 className='text-[3.5vmax] font-sfpd-bold'>Head Hunting services</h1>
                 </div>
-                <Headhunting className='w-[8rem] md:w-[10rem]'/>
-                <SecondaryButton title='Visit Site' />
+                <Headhunting className='w-[8rem] md:w-[10rem]' />
+                <Link href={"https://www.parenthesestalent.com/"}>
+                    <SecondaryButton title='Visit Site' />
+                </Link>
                 <div className='flex md:flex-row flex-col justify-center gap-6 md:gap-12 items-center md:text-lg text-white/80'>
                     <h1>Proactive Recruitment</h1>
                     <div className='bg-white p-1 rounded-full h-fit'></div>

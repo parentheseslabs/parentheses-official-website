@@ -159,7 +159,7 @@ const AllPartners = () => {
     useEffect(() => {
         const key = process.env.NEXT_PUBLIC_API_KEY;
         async function getServerSideProps() {
-            const url = `https://sheets.googleapis.com/v4/spreadsheets/1M8iUZOv8cpvEAKAbk2AC5V-5BDiLwkQibuhYZYX7WWg/values/Core%20Team?key=${key}`;
+            const url = `https://sheets.googleapis.com/v4/spreadsheets/1M8iUZOv8cpvEAKAbk2AC5V-5BDiLwkQibuhYZYX7WWg/values/Partners!A2:B?key=${key}`;
           
             let fetchData = [];
           
@@ -186,7 +186,7 @@ const AllPartners = () => {
         // console.log(filteredArray);
         getServerSideProps();
 
-    }, [filterSet || setFilterSet])
+    }, [])
     return (
         <div className='min-h-[200svh] flex py-10'>
             <div className=' sticky top-10 h-fit border-r-[0.5px] px-4 py-8 w-[15rem] flex flex-col gap-10'>
@@ -218,7 +218,7 @@ const AllPartners = () => {
                 }
                 <button className='rounded-full bg-primary_blue text-white md:w-full py-3 active:scale-95 duration-200 hover:bg-blue-700'>Apply</button>
             </div>
-            <div className='flex flex-wrap gap-8 justify-center w-fit'>
+            <div className='flex flex-wrap gap-8 justify-center w-fit '>
                 {
                    data && data?.map((item,idx)=>(
                         <PartnerCard key={idx} {...item}/>

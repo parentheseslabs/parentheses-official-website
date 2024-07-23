@@ -13,7 +13,7 @@ const BlogSection = async () => {
     return (
         <section className='min-h-[70svh] flex gap-8 px-[7%] py-20 xl:flex-row flex-col items-center lg:items-start'>
             <div className='flex flex-col gap-8 items-center lg:items-start pt-5'>
-                <h1 className='sm:text-lg md:text-2xl lg:text-[2.25vmax] font-sfpd-bold'>Our Latest Blogs and Articles</h1>
+                <h1 className='text-xl md:text-2xl lg:text-[2.25vmax] font-sfpd-bold'>Our Latest Blogs and Articles</h1>
                 <h2 className='text-neutral-500 text-center lg:text-start text-sm md:text-base'>Insights, Trends and Expertise: Dive into our knowledge Hub</h2>
                 <SecondaryButton title='All Blogs' className='hidden lg:flex' />
             </div>
