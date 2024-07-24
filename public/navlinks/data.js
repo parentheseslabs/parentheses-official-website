@@ -81,11 +81,11 @@ const navElementMembers =[
             },
             {
                 subtitle: "Creative Tools",
-                href: "/creativetools"
+                href: "/resources/creative_tools"
             },
             {
                 subtitle: "Development Tools",
-                href: "/developmenttools"
+                href: "/resources/development_tools"
             },
             {
                 subtitle: "Headhunting Service",

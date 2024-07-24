@@ -30,7 +30,7 @@ const OurValues = () => {
                         (
                             <div key={idx} className=' flex flex-col items-center gap-10 w-40 lg:w-48 xl:w-64'>
                                 <Image key={idx} src={item.img} width={368} height={368} alt='value' className='relative' />
-                                <h1>{item.title}</h1>
+                                <h1 className='text-xl font-sfpd-semibold tracking-wider'>{item.title}</h1>
                             </div>
                         )
                         )

@@ -1,12 +1,13 @@
 import React from 'react'
 import OneBlueWordHeading from '../OneBlueWordHeading'
 import Image from 'next/image'
+import Link from 'next/link';
 
 const data = [
     {
         title: "Development Tools",
         desc: "Creating an app for your business can get your product in front of new audiences.",
-        href:"/resources/development-tools",
+        href:"/resources/development_tools",
         tools: [
             {
                 cardTitle: "Hasura",
@@ -28,7 +29,7 @@ const data = [
     {
         title: "Creative Tools",
         desc: "Creating an app for your business can get your product in front of new audiences.",
-        href:"/resources/creative tools",
+        href:"/resources/creative_tools",
         tools: [
             {
                 cardTitle: "Figma",
@@ -96,7 +97,7 @@ const Description = ({ ...props }: descProps) => {
             <div className='ml-10 space-y-2'>
                 <h1 className='text-xl font-sfpd-semibold'>{props.title}</h1>
                 <h1 className='text-black/60 sm:w-[70%] text-lg'>{props.desc}</h1>
-                <a href={props.href} className='text-primary_blue'>Read More</a>
+                <Link href={props.href} className='text-primary_blue'>Read More</Link>
             </div>
             <div className='lg:w-[70%] xl:w-[60%]'>
                 <div className='grid grid-cols-2 gap-4 items-center'>
