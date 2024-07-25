@@ -200,10 +200,72 @@ export type SubServicesDocument<Lang extends string = string> =
     Lang
   >;
 
+type ToolsDocumentDataSlicesSlice = ToolsDescriptionSlice;
+
+/**
+ * Content for tools documents
+ */
+interface ToolsDocumentData {
+  /**
+   * Slice Zone field in *tools*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tools.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<ToolsDocumentDataSlicesSlice> /**
+   * Meta Description field in *tools*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: tools.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *tools*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tools.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *tools*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: tools.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * tools document from Prismic
+ *
+ * - **API ID**: `tools`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ToolsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<ToolsDocumentData>, "tools", Lang>;
+
 export type AllDocumentTypes =
   | BlogDocument
   | BlogPostDocument
-  | SubServicesDocument;
+  | SubServicesDocument
+  | ToolsDocument;
 
 /**
  * Primary content in *Blog → Default → Primary*
@@ -931,6 +993,145 @@ export type SubServiceSlice = prismic.SharedSlice<
   SubServiceSliceVariation
 >;
 
+/**
+ * Item in *ToolsDescription → Default → Primary → Usecase*
+ */
+export interface ToolsDescriptionSliceDefaultPrimaryUsecaseItem {
+  /**
+   * Case field in *ToolsDescription → Default → Primary → Usecase*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tools_description.default.primary.usecase[].case
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  case: prismic.KeyTextField;
+
+  /**
+   * Description field in *ToolsDescription → Default → Primary → Usecase*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tools_description.default.primary.usecase[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+}
+
+/**
+ * Item in *ToolsDescription → Default → Primary → Tags*
+ */
+export interface ToolsDescriptionSliceDefaultPrimaryTagsItem {
+  /**
+   * tag field in *ToolsDescription → Default → Primary → Tags*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tools_description.default.primary.tags[].tag
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tag: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *ToolsDescription → Default → Primary*
+ */
+export interface ToolsDescriptionSliceDefaultPrimary {
+  /**
+   * Name field in *ToolsDescription → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tools_description.default.primary.name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Website field in *ToolsDescription → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tools_description.default.primary.website
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  website: prismic.LinkField;
+
+  /**
+   * Description field in *ToolsDescription → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tools_description.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Usecase field in *ToolsDescription → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tools_description.default.primary.usecase[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  usecase: prismic.GroupField<
+    Simplify<ToolsDescriptionSliceDefaultPrimaryUsecaseItem>
+  >;
+
+  /**
+   * Tags field in *ToolsDescription → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tools_description.default.primary.tags[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  tags: prismic.GroupField<
+    Simplify<ToolsDescriptionSliceDefaultPrimaryTagsItem>
+  >;
+
+  /**
+   * Icon field in *ToolsDescription → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tools_description.default.primary.icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icon: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for ToolsDescription Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ToolsDescriptionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ToolsDescriptionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ToolsDescription*
+ */
+type ToolsDescriptionSliceVariation = ToolsDescriptionSliceDefault;
+
+/**
+ * ToolsDescription Shared Slice
+ *
+ * - **API ID**: `tools_description`
+ * - **Description**: ToolsDescription
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ToolsDescriptionSlice = prismic.SharedSlice<
+  "tools_description",
+  ToolsDescriptionSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -950,6 +1151,9 @@ declare module "@prismicio/client" {
       SubServicesDocument,
       SubServicesDocumentData,
       SubServicesDocumentDataSlicesSlice,
+      ToolsDocument,
+      ToolsDocumentData,
+      ToolsDocumentDataSlicesSlice,
       AllDocumentTypes,
       BlogSlice,
       BlogSliceDefaultPrimary,
@@ -986,6 +1190,12 @@ declare module "@prismicio/client" {
       SubServiceSliceDefaultPrimary,
       SubServiceSliceVariation,
       SubServiceSliceDefault,
+      ToolsDescriptionSlice,
+      ToolsDescriptionSliceDefaultPrimaryUsecaseItem,
+      ToolsDescriptionSliceDefaultPrimaryTagsItem,
+      ToolsDescriptionSliceDefaultPrimary,
+      ToolsDescriptionSliceVariation,
+      ToolsDescriptionSliceDefault,
     };
   }
 }

@@ -11,4 +11,5 @@ export const components = {
   hero_section: dynamic(() => import("./HeroSection")),
   steps: dynamic(() => import("./Steps")),
   sub_service: dynamic(() => import("./SubService")),
+  tools_description: dynamic(() => import("./ToolsDescription")),
 };

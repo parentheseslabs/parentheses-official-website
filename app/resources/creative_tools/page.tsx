@@ -57,7 +57,7 @@ const page = () => {
   return (
     <main className=' flex flex-col gap-16'>
       <ToolsHero {...creativeToolsPageInfo} />
-      <section className='space-y-20 divide-y-[2px] px-[7%]'>
+      <section className='space-y-20 divide-y-[2px] px-[7%] pb-20'>
         {
           creativetools.map((item, idx) => (
             <CommonCard key={idx} {...item} />

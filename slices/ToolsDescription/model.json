@@ -1,0 +1,88 @@
+{
+  "id": "tools_description",
+  "type": "SharedSlice",
+  "name": "ToolsDescription",
+  "description": "ToolsDescription",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "name": {
+          "type": "Text",
+          "config": {
+            "label": "Name",
+            "placeholder": ""
+          }
+        },
+        "website": {
+          "type": "Link",
+          "config": {
+            "label": "Website",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "description": {
+          "type": "Text",
+          "config": {
+            "label": "Description",
+            "placeholder": ""
+          }
+        },
+        "usecase": {
+          "type": "Group",
+          "config": {
+            "label": "Usecase",
+            "repeat": true,
+            "fields": {
+              "case": {
+                "type": "Text",
+                "config": {
+                  "label": "Case",
+                  "placeholder": ""
+                }
+              },
+              "description": {
+                "type": "Text",
+                "config": {
+                  "label": "Description",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "tags": {
+          "type": "Group",
+          "config": {
+            "label": "Tags",
+            "repeat": true,
+            "fields": {
+              "tag": {
+                "type": "Text",
+                "config": {
+                  "label": "tag",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "icon": {
+          "type": "Image",
+          "config": {
+            "label": "Icon",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

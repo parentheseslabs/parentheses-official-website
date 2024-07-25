@@ -17,7 +17,7 @@ interface cardProp {
 
 const CommonCard = ({ ...data }: cardProp) => {
   return (
-    <section className='min-h-[30svvh] flex lg:flex-row flex-col lg:gap-16 gap-8 py-10'>
+    <section className='min-h-[30svh] flex lg:flex-row flex-col lg:gap-16 gap-8 pt-20'>
       <div className='w-full space-y-4'>
         <Image src={data.img} width={59} height={51} alt='tool' className='w-[8rem] drop-shadow-xl bg-white p-4 rounded-lg'></Image>
         <h1 className='text-2xl font-sfpd-bold'>{data.name}</h1>

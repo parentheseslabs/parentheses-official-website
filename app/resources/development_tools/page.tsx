@@ -60,7 +60,7 @@ const page = () => {
   return (
     <main className=' flex flex-col gap-16'>
       <ToolsHero {...hero} />
-      <section className='space-y-20 divide-y-[2px] px-[7%]'>
+      <section className='space-y-20 divide-y-[2px] px-[7%] pb-20'>
         {
           technologies.map((item, idx) => (
             <CommonCard key={idx} {...item} />
