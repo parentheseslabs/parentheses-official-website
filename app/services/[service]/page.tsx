@@ -19,8 +19,11 @@ const page = async ({ params }: { params: { service: string } }) => {
     let data;
     try {
         data = await client.getByUID("sub_services", params.service);
+        console.log(data);
+        
     } catch (error) {
-
+        console.log(error);
+        
         redirect("/services")
     }
     const hero = data.data.slices[1]?.primary as { heading: string, sub_heading: string, big_image: { url: string }, small_image: { url: string } }
