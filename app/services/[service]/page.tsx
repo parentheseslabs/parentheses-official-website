@@ -6,6 +6,7 @@ import WorkFlow from '@/components/subservice/WorkFlow'
 import CaseStudiesCarousel from '@/components/subservice/CaseStudiesCarousel'
 import FAQ from '@/components/subservice/FAQ'
 import { createClient } from '@prismicio/client'
+import { redirect } from 'next/navigation'
 
 
 const page = async ({ params }: { params: { service: string } }) => {
@@ -15,7 +16,13 @@ const page = async ({ params }: { params: { service: string } }) => {
                 ? { next: { tags: ["prismic"] }, cache: "force-cache" }
                 : { next: { revalidate: 5 } },
     });
-    const data = await client.getByUID("sub_services", params.service)
+    let data;
+    try {
+        data = await client.getByUID("sub_services", params.service);
+    } catch (error) {
+
+        redirect("/services")
+    }
     const hero = data.data.slices[1]?.primary as { heading: string, sub_heading: string, big_image: { url: string }, small_image: { url: string } }
     const features = data.data.slices[2]?.primary as {
         heading: string,

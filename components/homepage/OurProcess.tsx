@@ -25,20 +25,27 @@ const picture = [
     {
         id: 0,
         img: '/animations/discovery.gif',
+        up: "/ourprocess/discovery/up.svg",
         left: "/ourprocess/discovery/lefttentacles.svg",
-        right: "/ourprocess/discovery/righttentacles.svg"
+        right: "/ourprocess/discovery/righttentacles.svg",
+        down: "/ourprocess/discovery/down.svg"
     },
     {
         id: 1,
-        img: "/animations/solutioning.gif",
-        left: "/ourprocess/solutioning/lefttentacles.svg",
-        right: "/ourprocess/solutioning/righttentacles.svg"
+        img: "/animations/handover.gif",
+        up: "/ourprocess/handover/up.svg",
+        left: "/ourprocess/handover/left.svg",
+        right: "/ourprocess/handover/right.svg",
+        down: "/ourprocess/handover/down.svg"
+        
     },
     {
         id: 2,
-        img: "/animations/handover.gif",
-        left: "/ourprocess/handover/left.svg",
-        right: "/ourprocess/handover/right.svg"
+        img: "/animations/solutioning.gif",
+        up: "/ourprocess/solutioning/up.svg",
+        left: "/ourprocess/solutioning/lefttentacles.svg",
+        right: "/ourprocess/solutioning/righttentacles.svg",
+        down: "/ourprocess/solutioning/down.svg"
     },
 ]
 
@@ -64,10 +71,12 @@ const OurProcess = () => {
                 <div className='flex w-full justify-center items-center py-10'>
                     {
                         picture.map((item, idx) => (
-                            <div key={idx} className={`${activeTab === idx ? "flex" : "hidden"} animate-fade items-center`}>
+                            <div key={idx} className={`${activeTab === idx ? "flex md:flex-row flex-col" : "hidden"} animate-fade items-center`}>
+                                <Image src={item.up} width={450} height={400} alt='step' className='flex md:hidden'></Image>
                                 <Image src={item.left} width={450} height={400} alt='step' className='hidden md:flex w-[18rem] lg:w-[25rem] xl:w-[30rem]'></Image>
                                 <Image src={item.img} width={400} height={400} alt='step' className='lg:w-[16rem] lg:h-[16rem] w-[12rem] h-[12rem] bg-white p-6 rounded-2xl shadow-allsideSmall'></Image>
                                 <Image src={item.right} width={300} height={300} alt='step' className='hidden md:flex w-[10rem] lg:w-[16rem] xl:w-[25rem]'></Image>
+                                <Image src={item.down} width={300} height={300} alt='step' className={`flex md:hidden ${item.id===1?"w-[10rem]":"w-full"} `}></Image>
                             </div>
                         ))
                     }
