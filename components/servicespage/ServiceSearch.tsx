@@ -3,7 +3,7 @@ import OneBlueWordHeading from '../OneBlueWordHeading'
 
 import ServiceCard from './ServiceCard'
 import Link from 'next/link'
-import { createClient } from '@/prismicio'
+import { createClient } from '@prismicio/client'
 
 const color = ["blue", "dark"]
 const images = [
@@ -158,7 +158,12 @@ const localData = [
 
 
 const ServiceSearch = async () => {
-    const client = createClient();
+    const client = createClient("parentheses", {
+        fetchOptions:
+            process.env.NODE_ENV === "production"
+                ? { next: { tags: ["prismic"] }, cache: "force-cache" }
+                : { next: { revalidate: 5 } },
+    });
     const data = await client.getAllByType("sub_services")
     const uid = localData.map(item=>item.href)
     const cardsDataArray = data.map((item) => item.data.slices.filter(item => item.slice_type === "card"))

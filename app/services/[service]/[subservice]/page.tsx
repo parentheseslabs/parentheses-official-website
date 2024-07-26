@@ -18,8 +18,7 @@ const page = async ({ params }: { params: { subservice: string } }) => {
     });
     let data;
     try {
-        data = await client.getByUID("sub_services", params.subservice)
-
+        data = await client.getByUID("sub_services", params.subservice);
     } catch (error) {
 
         redirect("/services")
