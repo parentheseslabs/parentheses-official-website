@@ -35,8 +35,8 @@ const page = async ({ params }: { params: { service: string } }) => {
         workFlow = data.data.slices[3]?.primary as { steps: { ids: number, title: string, sub_title: string, step_image: { url: string } }[] };
         Faq = data.data.slices[4]?.primary as { faq: { question: string, answer: string }[] }
         // console.log(Faq);
-    } catch (error) {
-        console.log(error);
+    } catch (error:any) {
+        console.log(error?.url);
 
         redirect("/services")
     }
