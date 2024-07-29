@@ -9,7 +9,7 @@ const navElementMembers =[
             },
             {
                 subtitle: "Team",
-                href: "/about/team"
+                href: "/about#teams"
             },
             {
                 subtitle: "Partners",
@@ -39,31 +39,31 @@ const navElementMembers =[
             },
             {
                 subtitle: "Ideation",
-                href: "/ideation",
+                href: "/services/ideation",
             },
             {
                 subtitle: "Market Research",
-                href: "/market-research"
+                href: "/services/market-research"
             },
             {
                 subtitle: "Brainstorming",
-                href: "/brainstorming"
+                href: "/services/brainstorming"
             },
             {
                 subtitle: "Designing",
-                href: "/designing"
+                href: "/services/designing"
             },
             {
                 subtitle: "Branding",
-                href: "/branding"
+                href: "/services/branding"
             },
             {
                 subtitle: "Prototype",
-                href: "/prototype"
+                href: "/services/prototype"
             },
             {
                 subtitle: "Development",
-                href: "/development"
+                href: "/services/development"
             },
         ]
     },

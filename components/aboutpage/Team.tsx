@@ -133,7 +133,7 @@ const Team = () => {
 
     }, [])
     return (
-        <section className='w-full flex flex-col items-center justify-center py-24 gap-32 relative'>
+        <section id='teams' className='w-full flex flex-col items-center justify-center py-24 gap-32 relative'>
             <div className='flex flex-col items-center justify-center w-[92%] gap-28'>
                 <OneBlueWordHeading heading='Meet our core team' wordNum={3} />
                 <div className='flex gap-10 flex-wrap justify-24 justify-center'>
