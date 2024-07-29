@@ -68,7 +68,7 @@ const NavBar: React.FC = () => {
     const isDrawerOpened = useDrawer(state => state.open)
     const toggleDrawer = useDrawer(state => state.toggleDrawer)
     return (
-        <section id='nav' className={`fixed ${isScrolled ? "pt-2" : "pt-14"} w-full justify-center px-[3.5%] z-[200] duration-500`}>
+        <section id='nav' className={`fixed ${isScrolled ? "pt-2" : "pt-14"} w-full justify-center px-[3.5%] z-[200] duration-200`}>
 
             <AnimatePresence>
                 {

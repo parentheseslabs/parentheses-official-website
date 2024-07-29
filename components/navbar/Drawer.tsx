@@ -12,11 +12,12 @@ const drawerVarients = {
 };
 
 
+
 const Drawer = () => {
 
     const toggleDrawer = useDrawer(state => state.toggleDrawer)
 
-
+    
     return (
         <motion.div
             variants={drawerVarients}
@@ -28,10 +29,10 @@ const Drawer = () => {
             <div className='w-full space-y-4'>
                 <h1 className='text-primary_blue'>Contact Us</h1>
                 <h1 className='font-sfpd-semibold text-2xl'>Let us know how can we help?</h1>
-                <form action="" className='space-y-10 '>
+                <form action="https://formspree.io/f/xjkbydgp" method='POST' className='space-y-10 '>
                     <div className='flex gap-4 flex-col md:flex-row'>
-                        <input type="text" placeholder='Your name' className='w-full bg-transparent outline-none focus:border-b-primary_blue border-b border-b-gray-500 py-3 px-4 italic  placeholder:text-neutral-600' />
-                        <input type="text" placeholder='Your email' className='w-full bg-transparent outline-none focus:border-b-primary_blue border-b border-b-gray-500 py-3 px-4 italic placeholder:text-neutral-600' />
+                        <input name='Name' type="text" placeholder='Your name' className='w-full bg-transparent outline-none focus:border-b-primary_blue border-b border-b-gray-500 py-3 px-4 italic  placeholder:text-neutral-600' />
+                        <input name='Email' type="text" placeholder='Your email' className='w-full bg-transparent outline-none focus:border-b-primary_blue border-b border-b-gray-500 py-3 px-4 italic placeholder:text-neutral-600' />
                     </div>
                     <div className='flex gap-4'>
                         <select name="countryCode" id="" className='bg-transparent w-[40%] outline-none border-b border-b-gray-500 focus:border-b-primary_blue' defaultValue={"USA (+1)"}>
@@ -254,11 +255,11 @@ const Drawer = () => {
                             </optgroup>
                         </select>
 
-                        <input type="tel" placeholder='Your Phone No.' className='w-[100%] bg-transparent outline-none focus:border-b-primary_blue border-b border-b-gray-500 py-3 px-4 italic  placeholder:text-neutral-600' />
+                        <input name='Phone No.' type="tel" placeholder='Your Phone No.' className='w-[100%] bg-transparent outline-none focus:border-b-primary_blue border-b border-b-gray-500 py-3 px-4 italic  placeholder:text-neutral-600' />
                     </div>
                     <div>
                         <h1 className='text-xl font-sfpd-semibold'>What&apos;s on your mind?</h1>
-                        <textarea name="" id="" rows={2} className='w-full bg-transparent outline-none focus:border-b-primary_blue border-b border-b-gray-500 py-3 px-4 italic flex items-end placeholder:text-neutral-600' placeholder='Your message'></textarea>
+                        <textarea name="Message" id="" rows={2} className='w-full bg-transparent outline-none focus:border-b-primary_blue border-b border-b-gray-500 py-3 px-4 italic flex items-end placeholder:text-neutral-600' placeholder='Your message'></textarea>
                     </div>
                     <SecondaryButton title='Submit' />
                 </form>
