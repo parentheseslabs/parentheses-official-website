@@ -7,18 +7,19 @@ import CaseStudiesCarousel from '@/components/subservice/CaseStudiesCarousel'
 import FAQ from '@/components/subservice/FAQ'
 import { createClient } from '@prismicio/client'
 import { redirect } from 'next/navigation'
+import { fetchData } from '@/utils/fetchData'
 
 
 const page = async ({ params }: { params: { subservice: string } }) => {
     const client = createClient("parentheses", {
         fetchOptions:
             process.env.NODE_ENV === "production"
-                ? { next: { tags: ["prismic"] }, cache: "no-store" }
+                ? { next: { tags: ["prismic"] }, cache: "no-cache" }
                 : { next: { revalidate: 5 } },
     });
     let data;
     try {
-        data = await client.getByUID("sub_services", params.subservice);
+        data = await fetchData(params.subservice,"sub_services")
     } catch (error) {
 
         redirect("/services")
