@@ -5,44 +5,41 @@ import Description from '@/components/subservice/Description'
 import WorkFlow from '@/components/subservice/WorkFlow'
 import CaseStudiesCarousel from '@/components/subservice/CaseStudiesCarousel'
 import FAQ from '@/components/subservice/FAQ'
-import { createClient } from '@prismicio/client'
 import { redirect } from 'next/navigation'
+import { fetchData } from '@/utils/fetchData'
 
 
 const page = async ({ params }: { params: { service: string } }) => {
-    const client = createClient("parentheses", {
-        fetchOptions:
-            process.env.NODE_ENV === "production"
-                ? { next: { tags: ["prismic"] }, cache: "no-store" }
-                : { next: { revalidate: 5 } },
-    });
+    
     let data;
+    let hero;
+    let features;
+    let workFlow;
+    let Faq;
     try {
-        data = await client.getByUID("sub_services", params.service);
-        console.log(data);
-        
+        data = await fetchData(params.service,"sub_services");
+        console.log(data.href);
+        hero = data.data.slices[1]?.primary as { heading: string, sub_heading: string, big_image: { url: string }, small_image: { url: string } }
+        features = data.data.slices[2]?.primary as {
+            heading: string,
+            sub_heading: string,
+            color_word_no: number,
+            feature_card: {
+                title: string,
+                feature_icon: {
+                    url: string
+                }
+            }[]
+        }
+
+        workFlow = data.data.slices[3]?.primary as { steps: { ids: number, title: string, sub_title: string, step_image: { url: string } }[] };
+        Faq = data.data.slices[4]?.primary as { faq: { question: string, answer: string }[] }
+        // console.log(Faq);
     } catch (error) {
         console.log(error);
-        
+
         redirect("/services")
     }
-    const hero = data.data.slices[1]?.primary as { heading: string, sub_heading: string, big_image: { url: string }, small_image: { url: string } }
-    const features = data.data.slices[2]?.primary as {
-        heading: string,
-        sub_heading: string,
-        color_word_no: number,
-        feature_card: {
-            title: string,
-            feature_icon: {
-                url: string
-            }
-        }[]
-    }
-
-    const workFlow = data.data.slices[3]?.primary as { steps: { ids: number, title: string, sub_title: string, step_image: { url: string } }[] };
-    const Faq = data.data.slices[4]?.primary as { faq: { question: string, answer: string }[] }
-    // console.log(Faq);
-
 
     return (
         <main>
@@ -60,7 +57,7 @@ const page = async ({ params }: { params: { service: string } }) => {
             }
             <CaseStudiesCarousel />
             {
-                Faq&& (
+                Faq && (
 
                     <FAQ allProp={Faq.faq} />
                 )

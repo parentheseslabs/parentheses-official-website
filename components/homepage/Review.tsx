@@ -1,6 +1,10 @@
+"use client"
 import React from 'react'
 import YellowStar from "@/public/icon/yellowStar.svg"
 import Image from 'next/image'
+import Lottie from 'react-lottie'
+import HeroAnimationDesktop from '@/public/animations/homeDesk.json'
+import HeroAnimationMobile from '@/public/animations/homeMobile.json'
 
 const logos= [
     "/icon/google.svg",
@@ -24,6 +28,11 @@ const customers= [
 const Review = () => {
     return (
         <div className='flex flex-col items-center py-10 gap-10 px-[7%]'>
+            <Lottie
+            width={600}
+            height={400}
+            options={{animationData:HeroAnimationDesktop}}
+            ></Lottie>
             <div className='flex md:gap-8 gap-4 items-center py-16 border-b border-neutral-200 md:flex-row flex-col'>
                 <div className='flex gap-1 items-center '>
 
