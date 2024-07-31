@@ -13,7 +13,6 @@ const Sale = ({ ...props }: props) => {
             <h1>
                 Accepting projects for : <span className='font-sfpd-semibold tracking-wider'>{month[date.getMonth()+2]}</span>
             </h1>
-            <button className={`rounded-full px-3 py-[0.375rem]  ${props.bg==='white'?" bg-primary_blue/20 text-primary_blue ":" bg-white/20 text-white"} cursor-pointer text-sm`}>Claim Now</button>
         </div>
     )
 }
