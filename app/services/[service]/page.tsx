@@ -18,7 +18,6 @@ const page = async ({ params }: { params: { service: string } }) => {
     let Faq;
     try {
         data = await fetchData(params.service,"sub_services");
-        console.log(data.href);
         hero = data.data.slices[1]?.primary as { heading: string, sub_heading: string, big_image: { url: string }, small_image: { url: string } }
         features = data.data.slices[2]?.primary as {
             heading: string,
