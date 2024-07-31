@@ -10,7 +10,7 @@ const page = async () => {
   const allBlogs = blogs.filter((blog)=>!blog.data.slices[0]?.primary.isfeatured)
 
   return (
-    <div id='hero' className='py-48 space-y-16'>
+    <div id='hero' className='py-48 space-y-16 animate-fade'>
       <div className='flex flex-col items-center justify-center gap-12'>
         <OneBlueWordHeading heading='Featured Blogs' wordNum={1} />
 

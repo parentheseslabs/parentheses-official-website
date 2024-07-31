@@ -4,10 +4,10 @@ import CommunityHero from '@/components/communitypage/CommunityHero'
 
 const page = () => {
     return (
-        <>
+        <div className='animate-fade'>
             <CommunityHero/>
             <CommunityCaseStudies/>
-        </>
+        </div>
     )
 }
 

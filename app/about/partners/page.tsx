@@ -5,7 +5,7 @@ import AllPartners from '@/components/partnerspage/AllPartners'
 
 const page = () => {
     return (
-        <main>
+        <main className='animate-fade'>
             <PartnerHero/>
             <AllPartners/>
         </main>

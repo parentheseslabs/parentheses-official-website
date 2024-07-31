@@ -43,7 +43,7 @@ const page = async ({ params }: { params: { subservice: string } }) => {
 
 
     return (
-        <main>
+        <main className='animate-fade'>
             {
                 hero &&
                 <Hero heading={hero.heading} subheading={hero.sub_heading} bigImage={hero.big_image.url} smallImage={hero.small_image.url} />

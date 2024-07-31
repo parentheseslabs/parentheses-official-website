@@ -7,7 +7,7 @@ import OurOffices from '@/components/contactpage/OurOffices'
 
 const page = () => {
   return (
-    <div className='min-h-screen min-w-full'>
+    <div className='min-h-screen min-w-full animate-fade'>
         <Sale bg='blue'/>
         <ContactHero/>
         <Contact heading={false}/>

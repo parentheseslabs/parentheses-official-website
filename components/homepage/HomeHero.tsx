@@ -1,11 +1,30 @@
-import React from 'react'
+'use client'
+import React, { useEffect, useState } from 'react'
 import PrimaryButton from '../buttons/PrimaryButton'
 import BgGridDark from '@/public/background/bgGridGrey.svg'
+import Preloader from '../Preloader'
 
 
 const HomeHero = () => {
+    const [loading, setLoading] = useState(true)
+    useEffect(()=>{
+        if(typeof(document)!==undefined){
+            document.body.style.height="100vh";
+            document.body.style.overflow="hidden"
+        }
+        setTimeout(()=>{
+            if(typeof(document)!==undefined){
+                document.body.style.height="100%";
+                document.body.style.overflow="auto"
+            }
+            setLoading(false)
+        },2700)
+    },[])
     return (
-        <div id='hero' className='bg-white min-h-[100svh] relative z-0 overflow-hidden  flex flex-col items-center pt-5 justify-center text-black text-center min-w-full gap-14'>
+        loading?
+        <Preloader/>
+        :
+        <div id='hero' className='animate-fade bg-white min-h-[100svh] relative z-0 overflow-hidden  flex flex-col items-center pt-5 justify-center text-black text-center min-w-full gap-14'>
             <div className='flex flex-col lg:w-2/3 items-center justify-center'>
                 <div className='flex flex-col gap-8 w-full items-center'>
                     <div className='flex text-[4vmax] md:text-[4.5vmax] flex-col  justify-center items-center'>

@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic'
 const ServiceSearch = dynamic(()=>import('@/components/servicespage/ServiceSearch'),{ssr:false});
 const page = () => {
   return (
-    <main className=''>
+    <main className='animate-fade'>
         <ServiceHero/>
         <ServiceSearch/>
     </main>

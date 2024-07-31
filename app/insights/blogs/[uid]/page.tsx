@@ -14,7 +14,7 @@ const page = async ({ params }: { params: { uid: string } }) => {
   const data = blogData.data.slices[0]?.primary
 
   return (
-    <div id='hero' className='min-h-[100svh] min-w-full text-black space-y-16 pt-32 pb-20 flex flex-col items-center'>
+    <div id='hero' className='min-h-[100svh] min-w-full text-black space-y-16 pt-32 pb-20 flex flex-col items-center animate-fade'>
       <div className={`w-full bg-primary_blue py-10  md:px-[4%] gap-16 text-whit text-white flex md:flex-row flex-col md:justify-center md:items-center`}>
         <Image src={data?.thumbnail.url ? data?.thumbnail.url : ""} width={500} height={350} className=' md:w-[50svw] w-full  object-contain rounded-' alt={data?.thumbnail.alt ? data?.thumbnail.alt : ""}></Image>
         <div className='px-[4%] md:px-0 space-y-4'>

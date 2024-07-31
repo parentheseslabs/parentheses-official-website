@@ -4,6 +4,8 @@ import "./globals.css";
 import Drawer from "@/components/navbar/Drawer";
 const NavBar = dynamic(() => import('@/components/navbar/index'))
 const Footer = dynamic(() => import('@/components/footer/Footer'))
+import { Suspense } from "react";
+import Preloader from "@/components/Preloader";
 
 
 export const metadata: Metadata = {
@@ -18,12 +20,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sfpd-regular`}>
-        <NavBar />
-        <Drawer />
-        {children}
-        <Footer />
-      </body>
+        <body className={`font-sfpd-regular`}>
+          <NavBar />
+          <Drawer />
+          {children}
+          <Footer />
+        </body>
     </html>
   );
 }

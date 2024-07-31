@@ -28,7 +28,7 @@ const caseStudies = [
 
 const page = () => {
   return (
-    <main className='flex flex-col items-center overflow-hidden'>
+    <main className='flex flex-col items-center overflow-hidden animate-fade'>
       <Sale bg='blue'/>
       <CaseHero />
       <div className=' w-full flex flex-col items-center gap-24 md:gap-16 py-40 md:py-72 relative'>

@@ -1,3 +1,4 @@
+
 import HomeHero from "@/components/homepage/HomeHero";
 import Review from "@/components/homepage/Review";
 import Sale from "@/components/sale";
@@ -11,43 +12,46 @@ import BlogSection from "@/components/homepage/BlogSection";
 import FeaturedServices from "@/components/homepage/FeaturedServices";
 import OurProcess from "@/components/homepage/OurProcess";
 
+
+
 const faq = [
   {
-      question: "What is your name?",
-      answer: "Bhupendra Yogi"
+    question: "What is your name?",
+    answer: "Bhupendra Yogi"
   },
   {
-      question: "What is your name?",
-      answer: "Bhupendra Yogi"
+    question: "What is your name?",
+    answer: "Bhupendra Yogi"
   },
   {
-      question: "What is your name?",
-      answer: "Bhupendra Yogi"
+    question: "What is your name?",
+    answer: "Bhupendra Yogi"
   },
   {
-      question: "What is your name?",
-      answer: "Bhupendra Yogi"
+    question: "What is your name?",
+    answer: "Bhupendra Yogi"
   },
   {
-      question: "What is your name?",
-      answer: "Bhupendra Yogi"
+    question: "What is your name?",
+    answer: "Bhupendra Yogi"
   },
 ]
 export default function Home() {
+  
   return (
-    <main className=" bg-white font-sfpd-regular min-h-screen">
-      <Sale bg="blue"/>
-      <HomeHero/>
-      <Review/>
-      <Steps/>
-      <FeaturedServices/>
-      <OurProcess/>
-      <TechStack/>
-      <EngagementModel/>
-      <CaseStudiesCarousel/>
-      <BlogSection/>
-      <NewsLetter/>
-      <FAQ allProp={faq}/>
+    <main className=" bg-white font-sfpd-regular min-h-screen animate-fade">
+      <Sale bg="blue" />
+      <HomeHero />
+      <Review />
+      <Steps />
+      <FeaturedServices />
+      <OurProcess />
+      <TechStack />
+      <EngagementModel />
+      <CaseStudiesCarousel />
+      <BlogSection />
+      <NewsLetter />
+      <FAQ allProp={faq} />
     </main>
   );
 }

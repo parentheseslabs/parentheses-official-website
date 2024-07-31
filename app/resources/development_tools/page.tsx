@@ -58,7 +58,7 @@ const hero = {
 
 const page = () => {
   return (
-    <main className=' flex flex-col gap-16'>
+    <main className=' flex flex-col gap-16 animate-fade'>
       <ToolsHero {...hero} />
       <section className='space-y-20 divide-y-[2px] px-[7%] pb-20'>
         {

@@ -7,7 +7,7 @@ import Tools from '@/components/resourcespage/Tools'
 
 const page = () => {
   return (
-    <main className='pb-20'>
+    <main className='pb-20 animate-fade'>
         <ResourcesHero/>
         <StartupResources/>
         <HeadHunting/>

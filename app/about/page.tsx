@@ -12,7 +12,7 @@ import { Suspense } from "react";
 
 const About = () => {
   return (
-    <div className='min-h-[100svh]'>
+    <div className='min-h-[100svh] animate-fade'>
       <Sale bg="white" className="" />
       <AboutHero />
       <Suspense fallback={<div>Loading History...</div>}>
