@@ -26,7 +26,7 @@ const Drawer = () => {
                     initial="hidden"
                     animate="visible"
                     exit="exit"
-                    className='absolute z-[999] top-0 right-0 lg:w-[40%] min-h-svh bg-white/60 border-l border-l-primary_blue backdrop-blur-xl flex items-center px-8 md:px-10 text-neutral-700'>
+                    className='fixed z-[999] top-0 right-0 lg:w-[40%] min-h-svh bg-white/60 border-l border-l-primary_blue backdrop-blur-xl flex items-center px-8 md:px-10 text-neutral-700'>
 
                     <div className='w-full space-y-4'>
                         <h1 className='text-primary_blue'>Contact Us</h1>
