@@ -65,17 +65,10 @@ const NavBar: React.FC = () => {
         }
         window.addEventListener('scroll', handleScroll)
     }, [])
-    const isDrawerOpened = useDrawer(state => state.open)
+    // const isDrawerOpened = useDrawer(state => state.open)
     const toggleDrawer = useDrawer(state => state.toggleDrawer)
     return (
-        <section id='nav' className={`fixed ${isScrolled ? "pt-2" : "pt-14"} w-full justify-center px-[3.5%] z-[200] duration-200`}>
-
-            <AnimatePresence>
-                {
-                    isDrawerOpened &&
-                    <Drawer />
-                }
-            </AnimatePresence>
+        <section id='nav' className={`fixed ${isScrolled ? "top-2" : "top-14"} w-full justify-center px-[3.5%] z-[200] duration-200`}>
             <div className={`${pathname === '/about' ? "lg:bg-white" : "lg:bg-white/50"} lg:backdrop-blur-lg h-fit w-full flex rounded-full lg:border-[1.5px] border-primary_blue gap justify-between px-5 items-center relative`}>
                 <Link href={'/'} aria-label='Go to home page'>
                     <ParenthesesLogo className='hidden lg:flex relative z-50' />
