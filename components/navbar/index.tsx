@@ -9,7 +9,7 @@ import { useDrawer } from '@/lib/store'
 
 const SecondaryButton = dynamic(() => import('../buttons/SecondaryButton'))
 const MobileNav = dynamic(() => import('@/components/navbar/MobileNav'));
-import Drawer from './Drawer'
+
 
 import MobileLogo from '@/public/logo/moblieLogo.svg'
 import { AnimatePresence } from 'framer-motion'
@@ -68,7 +68,7 @@ const NavBar: React.FC = () => {
     // const isDrawerOpened = useDrawer(state => state.open)
     const toggleDrawer = useDrawer(state => state.toggleDrawer)
     return (
-        <section id='nav' className={`fixed ${isScrolled ? "top-2" : "top-14"} w-full justify-center px-[3.5%] z-[200] duration-200`}>
+        <section id='nav' className={`fixed ${isScrolled ? "top-2" : "top-14"} w-full justify-center px-[3.5%] z-[200] duration-200 animate-fade`}>
             <div className={`${pathname === '/about' ? "lg:bg-white" : "lg:bg-white/50"} lg:backdrop-blur-lg h-fit w-full flex rounded-full lg:border-[1.5px] border-primary_blue gap justify-between px-5 items-center relative`}>
                 <Link href={'/'} aria-label='Go to home page'>
                     <ParenthesesLogo className='hidden lg:flex relative z-50' />

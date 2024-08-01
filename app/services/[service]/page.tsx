@@ -1,4 +1,4 @@
-// export const dynamicParams = true // true | false,
+
 import React from 'react'
 import Hero from '@/components/subservice/Hero'
 import Description from '@/components/subservice/Description'

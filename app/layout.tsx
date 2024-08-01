@@ -4,8 +4,6 @@ import "./globals.css";
 import Drawer from "@/components/navbar/Drawer";
 const NavBar = dynamic(() => import('@/components/navbar/index'))
 const Footer = dynamic(() => import('@/components/footer/Footer'))
-import { Suspense } from "react";
-import Preloader from "@/components/Preloader";
 
 
 export const metadata: Metadata = {

@@ -18,7 +18,7 @@ const HomeHero = () => {
                 document.body.style.overflow="auto"
             }
             setLoading(false)
-        },2700)
+        },2900)
     },[])
     return (
         loading?
