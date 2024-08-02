@@ -21,7 +21,7 @@ const navElementMembers =[
             },
             {
                 subtitle: "Awards",
-                href: "/about/awards"
+                href: "/about#awards"
             },
             {
                 subtitle: "Press",

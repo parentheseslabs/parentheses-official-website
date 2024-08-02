@@ -35,7 +35,7 @@ const TechStack = () => {
         return () => clearInterval(interval)
     })
     return (
-        <section className='min-h-[90svh] px-[7%] flex justify-center items-center'>
+        <section className='min-h-[90rem] px-[7%] flex justify-center items-center'>
             <div className='flex lg:h-[25rem] 2xl:h-[60rem] md:flex-row flex-col'>
                 <div className='bg-primary_blue rounded-t-3xl md:rounded-l-3xl md:rounded-r-none flex flex-col justify-center  px-5 sm:px-10 py-8 md:py-0 md:px-14 lg:px-20 gap-8 text-white md:w-1/2 items-center'>
                     <div className='flex gap-8  items-center justify-center w-[20rem] border-b border-white/20 pb-4'>
