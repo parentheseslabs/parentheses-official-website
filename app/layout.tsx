@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import "./globals.css";
-import Drawer from "@/components/navbar/Drawer";
+const Drawer = dynamic(()=>import("@/components/navbar/Drawer"))
 const NavBar = dynamic(() => import('@/components/navbar/index'))
 const Footer = dynamic(() => import('@/components/footer/Footer'))
 

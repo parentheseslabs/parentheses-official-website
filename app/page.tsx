@@ -1,18 +1,18 @@
 
+import dynamic from "next/dynamic";
 import HomeHero from "@/components/homepage/HomeHero";
-import Review from "@/components/homepage/Review";
 import Sale from "@/components/sale";
-import Steps from "@/components/homepage/Steps";
-import TechStack from "@/components/homepage/TechStack";
-import EngagementModel from "@/components/homepage/EngagementModel";
-import FAQ from "@/components/subservice/FAQ";
-import NewsLetter from "@/components/homepage/NewsLetter";
-import CaseStudiesCarousel from "@/components/subservice/CaseStudiesCarousel";
-import BlogSection from "@/components/homepage/BlogSection";
-import FeaturedServices from "@/components/homepage/FeaturedServices";
-import OurProcess from "@/components/homepage/OurProcess";
 
-
+const Review = dynamic(()=>import('@/components/homepage/Review'))
+const Steps =dynamic(()=>import("@/components/homepage/Steps"))
+const TechStack = dynamic(()=>import("@/components/homepage/TechStack"));
+const EngagementModel = dynamic(() => import('@/components/homepage/EngagementModel'));
+const FAQ = dynamic(() => import('@/components/subservice/FAQ'));
+const NewsLetter = dynamic(() => import('@/components/homepage/NewsLetter'));
+const CaseStudiesCarousel = dynamic(() => import('@/components/subservice/CaseStudiesCarousel'));
+const BlogSection = dynamic(() => import('@/components/homepage/BlogSection'));
+const FeaturedServices = dynamic(() => import('@/components/homepage/FeaturedServices'));
+const OurProcess = dynamic(() => import('@/components/homepage/OurProcess'));
 
 const faq = [
   {
