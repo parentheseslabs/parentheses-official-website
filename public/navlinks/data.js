@@ -91,6 +91,10 @@ const navElementMembers =[
                 subtitle: "Headhunting Service",
                 href: "/headhuntingtools"
             },
+            {
+                subtitle: "Leads",
+                href: "https://parantheseslabs-leads.streamlit.app"
+            },
         ]
     },
     {
